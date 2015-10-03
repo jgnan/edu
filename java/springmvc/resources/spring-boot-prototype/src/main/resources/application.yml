@@ -1,0 +1,50 @@
+spring:
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+      
+endpoints.trace.enabled: false
+
+server:
+  port: ${server.port}
+
+app:
+  debug: ${app.debug}
+  stream:
+    shutdownUrl: ${app.stream.shutdownUrl}
+  redis:
+    host: ${app.redis.host}
+    port: ${app.redis.port}
+    user: ${app.redis.user}
+    passwd: ${app.redis.passwd}
+  cache:
+    url: ${app.cache.url}
+  mongo:
+    genetv:
+      replica.set: ${app.mongo.genetv.replica.set}
+      host: ${app.mongo.genetv.host}
+      port: ${app.mongo.genetv.port}
+      db: ${app.mongo.genetv.db}
+      user: ${app.mongo.genetv.user}
+      passwd: ${app.mongo.genetv.passwd}
+      connTimeout: 30000
+      waitTimeout: 30000
+      writeTimeout: 10000
+      slaveOk: true
+      keepAlive: true
+      connPerHost: ${app.mongo.genetv.connPerHost}
+
+  live:
+    rtmp:
+      url: rtmp://${app.live.context_path}/live/%s
+    hls:
+      url: http://${app.live.context_path}/live/%s.m3u8
+    snapshot:
+      url: ${app.live.snapshot.url}
+  search:
+    url: ${app.search.url}
+  push:
+    url: ${app.push.url}
+    title: ${app.push.title}
