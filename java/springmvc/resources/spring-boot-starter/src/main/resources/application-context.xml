@@ -25,15 +25,15 @@
 		section to enable this feature.
 	-->
 	<!-- 
-	<mongo:db-factory id="mongoExampleFactory" dbname="${app.mongo.example.db}" 
+	<mongo:db-factory id="mongoFactoryExample" dbname="${app.mongo.example.db}" 
 		host="${app.mongo.example.host}" port="${app.mongo.example.port}" write-concern="SAFE"/>
-	<mongo:mapping-converter id="converter" db-factory-ref="mongoExampleFactory"/>
+	<mongo:mapping-converter id="converter" db-factory-ref="mongoFactoryExample"/>
 
-	<mongo:repositories mongo-template-ref="mongoExampleTemplate"
-		base-package="study.springmvc.example.repos.mongo" />
+	<mongo:repositories mongo-template-ref="mongoTemplateExample"
+		base-package="study.springboot.starter.repos.mongo.example" />
 
-	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
-		<constructor-arg name="mongoDbFactory" ref="mongoExampleFactory" />
+	<bean id="mongoTemplateExample" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg name="mongoDbFactory" ref="mongoFactoryExample" />
 	</bean>
  	-->	
  	
@@ -42,37 +42,36 @@
 		section to enable this feature.
 	-->
 	<!-- 
-	<mongo:mongo id="mongoRepliSet" replica-set="${app.mongo.example.replica_set}" >
-	    <mongo:options auto-connect-retry="true" max-wait-time="${app.mongo.example.waitTimeout}" 
-	        connections-per-host="${app.mongo.example.connPerHost}" 
-	        connect-timeout="${app.mongo.example.connTimeout}" 
-	        slave-ok="${app.mongo.example.slaveOk}" write-timeout="${app.mongo.example.writeTimeout}" 
-	        socket-keep-alive="${app.mongo.example.keepAlive}" 
-	        socket-timeout="${app.mongo.example.connTimeout}"/>
+	<mongo:mongo id="mongoRepliSetExample" replica-set="${app.mongo.example.replica_set}" >
+	    <mongo:options auto-connect-retry="true" max-wait-time="${app.mongo.example.wait_timeout}" 
+	        connections-per-host="${app.mongo.example.conn_per_host}" 
+	        connect-timeout="${app.mongo.example.conn_timeout}" 
+	        slave-ok="${app.mongo.example.slave_ok}" 
+	        write-timeout="${app.mongo.example.write_timeout}" 
+	        socket-keep-alive="${app.mongo.example.keep_alive}" 
+	        socket-timeout="${app.mongo.example.conn_timeout}"/>
 	</mongo:mongo>
-	<bean id="mongoExampleCredentials" class="org.springframework.data.authentication.UserCredentials">
+	<bean id="mongoCredentialsExample" class="org.springframework.data.authentication.UserCredentials">
 		<constructor-arg name="username" value="${app.mongo.example.user}" />
 		<constructor-arg name="password" value="${app.mongo.example.passwd}" />
 	</bean>
-	<bean id="mongoExampleTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">		
-		<constructor-arg ref="replicaSetMongo" />
+	<bean id="mongoTemplateExample" class="org.springframework.data.mongodb.core.MongoTemplate">		
+		<constructor-arg ref="mongoRepliSetExample" />
 		<constructor-arg name="databaseName" value="${app.mongo.example.db}" />
-		<constructor-arg name="userCredentials" ref="mongoExampleCredentials" />
+		<constructor-arg name="userCredentials" ref="mongoCredentialsExample" />
 	</bean>
-	<mongo:repositories mongo-template-ref="mongoGenetvTemplate" base-package="study.springmvc.example.repos.mongo" />
+	<mongo:repositories mongo-template-ref="mongoTemplateExample" base-package="study.springboot.starter.repos.mongo.example" />
 	-->
 	
 	
 	<!-- Jedis Configuration. Remove this config to enable redis. -->
 	<!-- 
-	<bean id="jedisExampleConnFactory"
+	<bean id="jedisConnFactoryExample"
 		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
 		p:host-name="${app.redis.example.host}" p:port="${app.redis.example.port}" p:password="${app.redis.example.passwd}"
 		p:use-pool="true" />
-	<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate"
-		p:connection-factory-ref="jedisExampleConnFactory" />
-	<bean id="stringRedisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate"
-		p:connection-factory-ref="jedisConnFactory" />
-	<bean id="cacheManager" class="org.springframework.data.redis.cache.RedisCacheManager" c:template-ref="redisTemplate"/>
+	<bean id="redisTemplateExample" class="org.springframework.data.redis.core.RedisTemplate"
+		p:connection-factory-ref="jedisConnFactoryExample" />
+	<bean id="cacheManager" class="org.springframework.data.redis.cache.RedisCacheManager" c:template-ref="redisTemplateExample"/>
 	-->
 </beans>
