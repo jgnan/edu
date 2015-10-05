@@ -1,8 +1,8 @@
 # 项目说明
 这个是一个为了大家能够快速搭建Springboot＋SpringMVC开发环境所准备的框架项目。大家在完成相应的项目课程的时候都可以使用此框架进行训练环境的搭建。
 
-## [前置条件](#pre-requirement)
-## [初次使用项目向导](#init-setup)
+* [前置条件](#pre-requirement)
+* [初次使用项目向导](#init-setup)
 
 ## <a name="pre-requirement"></a>前置条件
 在你正式开始进行本向导的内容之前，请先在你的本地准备以下的工具
