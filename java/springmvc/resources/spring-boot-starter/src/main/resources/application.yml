@@ -7,7 +7,6 @@ spring:
       enabled: true
       force: true
       
-endpoints.trace.enabled: false
 # All server's configuration here
 server:
   # This server instance's port
