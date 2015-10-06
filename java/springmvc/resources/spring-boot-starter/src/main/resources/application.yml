@@ -45,6 +45,8 @@ app:
   # Mybatis Section
   mybatis:
     example:
-      db:
-      user:
+      jdbc_url: "jdbc:mysql://localhost:3306/example?zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=utf-8"
+      user: root
       passwd:
+      base_pkg: study.springboot.starter.repos.mybatis.example
+      alias_pkg: study.springboot.starter.domain

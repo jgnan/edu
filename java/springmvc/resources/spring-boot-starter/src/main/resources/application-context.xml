@@ -3,12 +3,14 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:task="http://www.springframework.org/schema/task"
+  xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
 	xmlns:c="http://www.springframework.org/schema/c"
 	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
     http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd
     http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.0.xsd
+    http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 	<!--
 		Task executor configuration. Remove comments in this section to enable a task executor which could
@@ -74,4 +76,29 @@
 		p:connection-factory-ref="jedisConnFactoryExample" />
 	<bean id="cacheManager" class="org.springframework.data.redis.cache.RedisCacheManager" c:template-ref="redisTemplateExample"/>
 	-->
+
+  <!-- Mybatis settings -->
+  <!--
+  <bean id="dataSourceExample" class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">
+    <property name="driverClass" value="com.mysql.jdbc.Driver" />
+    <property name="jdbcUrl" value="${app.mybatis.example.jdbc_url}" />
+    <property name="username" value="${app.mybatis.example.user}"/>
+    <property name="password" value="${app.mybatis.example.passwd}"/>
+    <property name="idleConnectionTestPeriodInMinutes" value="10"/>
+    <property name="IdleMaxAgeInMinutes" value="5"/>
+    <property name="maxConnectionsPerPartition" value="30"/>
+    <property name="minConnectionsPerPartition" value="10"/>
+    <property name="partitionCount" value="3"/>
+    <property name="acquireIncrement" value="5"/>
+    <property name="statementsCacheSize" value="100"/>
+  </bean>
+
+  <mybatis:scan base-package="${app.mybatis.example.base_pkg}" />
+
+
+  <bean id="sqlSessionFactoryExample" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <property name="dataSource" ref="dataSourceExample" />
+    <property name="typeAliasesPackage" value="${app.mybatis.example.alias_pkg}"/>
+  </bean>
+  -->
 </beans>
