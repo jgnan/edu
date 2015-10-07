@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:task="http://www.springframework.org/schema/task"
-  xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
+    xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
 	xmlns:c="http://www.springframework.org/schema/c"
 	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
@@ -12,6 +12,7 @@
     http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.0.xsd
     http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+    
 	<!--
 		Task executor configuration. Remove comments in this section to enable a task executor which could
 		help us to execute async task in some certain circumstance to improve performance 
@@ -26,8 +27,8 @@
 		Mongodb single instance mode config. If you use a single mongo db instance, you could remove this 
 		section to enable this feature.
 	-->
-	<!-- 
-	<mongo:db-factory id="mongoFactoryExample" dbname="${app.mongo.example.db}" 
+    <!-- 
+	<mongo:db-factory id="mongoFactoryExample" dbname="${app.mongo.example.dbName}" 
 		host="${app.mongo.example.host}" port="${app.mongo.example.port}" write-concern="SAFE"/>
 	<mongo:mapping-converter id="converter" db-factory-ref="mongoFactoryExample"/>
 
@@ -37,21 +38,21 @@
 	<bean id="mongoTemplateExample" class="org.springframework.data.mongodb.core.MongoTemplate">
 		<constructor-arg name="mongoDbFactory" ref="mongoFactoryExample" />
 	</bean>
- 	-->	
- 	
+    <mongo:repositories mongo-template-ref="mongoTemplateExample" base-package="${app.mongo.example.basePackage}" />
+    -->
 	<!-- 
 		Mongodb replication-set mode config. If you use a replica-set, you could remove this 
 		section to enable this feature.
 	-->
 	<!-- 
-	<mongo:mongo id="mongoRepliSetExample" replica-set="${app.mongo.example.replica_set}" >
-	    <mongo:options auto-connect-retry="true" max-wait-time="${app.mongo.example.wait_timeout}" 
-	        connections-per-host="${app.mongo.example.conn_per_host}" 
-	        connect-timeout="${app.mongo.example.conn_timeout}" 
-	        slave-ok="${app.mongo.example.slave_ok}" 
-	        write-timeout="${app.mongo.example.write_timeout}" 
-	        socket-keep-alive="${app.mongo.example.keep_alive}" 
-	        socket-timeout="${app.mongo.example.conn_timeout}"/>
+	<mongo:mongo id="mongoRepliSetExample" replica-set="${app.mongo.example.replicaSet}" >
+	    <mongo:options auto-connect-retry="true" max-wait-time="${app.mongo.example.waitTimeout}" 
+	        connections-per-host="${app.mongo.example.connPerHost}" 
+	        connect-timeout="${app.mongo.example.connTimeout}" 
+	        slave-ok="${app.mongo.example.slaveOk}" 
+	        write-timeout="${app.mongo.example.writeTimeout}" 
+	        socket-keep-alive="${app.mongo.example.keepAlive}" 
+	        socket-timeout="${app.mongo.example.connTimeout}"/>
 	</mongo:mongo>
 	<bean id="mongoCredentialsExample" class="org.springframework.data.authentication.UserCredentials">
 		<constructor-arg name="username" value="${app.mongo.example.user}" />
@@ -59,10 +60,10 @@
 	</bean>
 	<bean id="mongoTemplateExample" class="org.springframework.data.mongodb.core.MongoTemplate">		
 		<constructor-arg ref="mongoRepliSetExample" />
-		<constructor-arg name="databaseName" value="${app.mongo.example.db}" />
+		<constructor-arg name="databaseName" value="${app.mongo.example.dbName}" />
 		<constructor-arg name="userCredentials" ref="mongoCredentialsExample" />
 	</bean>
-	<mongo:repositories mongo-template-ref="mongoTemplateExample" base-package="study.springboot.starter.repos.mongo.example" />
+  <mongo:repositories mongo-template-ref="mongoTemplateExample" base-package="${app.mongo.example.basePackage}" />
 	-->
 	
 	
@@ -81,7 +82,7 @@
   <!--
   <bean id="dataSourceExample" class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">
     <property name="driverClass" value="com.mysql.jdbc.Driver" />
-    <property name="jdbcUrl" value="${app.mybatis.example.jdbc_url}" />
+    <property name="jdbcUrl" value="${app.mybatis.example.jdbcUrl}" />
     <property name="username" value="${app.mybatis.example.user}"/>
     <property name="password" value="${app.mybatis.example.passwd}"/>
     <property name="idleConnectionTestPeriodInMinutes" value="10"/>
@@ -93,12 +94,12 @@
     <property name="statementsCacheSize" value="100"/>
   </bean>
 
-  <mybatis:scan base-package="${app.mybatis.example.base_pkg}" />
+  <mybatis:scan base-package="study.springboot.example.repos.mybatis" />
 
 
   <bean id="sqlSessionFactoryExample" class="org.mybatis.spring.SqlSessionFactoryBean">
     <property name="dataSource" ref="dataSourceExample" />
-    <property name="typeAliasesPackage" value="${app.mybatis.example.alias_pkg}"/>
+    <property name="typeAliasesPackage" value="study.springboot.example.domain"/>
   </bean>
   -->
 </beans>

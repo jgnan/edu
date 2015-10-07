@@ -29,23 +29,22 @@ app:
   # Mongo section
   mongo:
     example:
-      replica.set: 
-      host: 
-      port: 
-      db: 
-      user: 
+      replicaSet: 
+      host: localhost
+      port: 27017
+      dbName: example
+      user: root
       passwd: 
-      conn_timeout: 30000
-      wait_timeout: 30000
-      write_timeout: 10000
-      slave_ok: true
-      keep_alive: true
-      conn_per_host: 
+      connTimeout: 30000
+      waitTimeout: 30000
+      writeTimeout: 10000
+      slaveOk: false
+      keepAlive: true
+      connPerHost: 
+      basePackage: study.springboot.example.repos.mongo
   # Mybatis Section
   mybatis:
     example:
-      jdbc_url: "jdbc:mysql://localhost:3306/example?zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=utf-8"
+      jdbcUrl: jdbc:mysql://localhost:3306/example?zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=utf-8
       user: root
       passwd:
-      base_pkg: study.springboot.starter.repos.mybatis.example
-      alias_pkg: study.springboot.starter.domain
