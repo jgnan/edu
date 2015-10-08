@@ -6,6 +6,9 @@ spring:
       charset: UTF-8
       enabled: true
       force: true
+  view:
+    prefix: "/WEB-INF/jsp/"
+    suffix: .jsp
       
 # All server's configuration here
 server:
