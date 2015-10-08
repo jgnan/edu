@@ -1,0 +1,53 @@
+# This section use by spring mvc
+spring:
+  http:
+    # Chararcter Encoding filter settings
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  view:
+    prefix: "/WEB-INF/jsp"
+    suffix: .jsp
+      
+# All server's configuration here
+server:
+  # This server instance's port
+  port: 8080
+
+# Application settings for your own project
+app:
+  # Debug flag to figure our whether its in debug mode
+  debug: true
+  # Redis setting
+  redis:
+    example:
+      host: 
+      port: 
+      user: 
+      passwd: 
+  # When you use the Spring provider cache manager, this will help
+  cache:
+    url: 
+  # Mongo section
+  mongo:
+    example:
+      replicaSet: 
+      host: localhost
+      port: 27017
+      dbName: example
+      user: root
+      passwd: 
+      connTimeout: 30000
+      waitTimeout: 30000
+      writeTimeout: 10000
+      slaveOk: false
+      keepAlive: true
+      connPerHost: 
+      basePackage: study.springboot.example.repos.mongo
+  # Mybatis Section
+  mybatis:
+    example:
+      jdbcUrl: jdbc:mysql://localhost:3306/example?zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=utf-8
+      user: root
+      passwd:

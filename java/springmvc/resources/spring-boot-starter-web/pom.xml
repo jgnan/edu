@@ -1,0 +1,118 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+	  <groupId>study.springboot.starter</groupId>
+	  <artifactId>web</artifactId>
+	  <version>0.0.1-SNAPSHOT</version>
+    <package>war</package>
+    <name>Spring Boot Prototype</name>
+	  <description>Demo project for spring mvc</description>
+	  <!-- All modifiers -->
+	  <properties>
+	  </properties>
+	  <!-- Inherit defaults from Spring Boot -->
+	  <parent>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-parent</artifactId>
+		  <version>1.2.6.RELEASE</version>
+	  </parent>
+
+	  <!-- 项目的依赖管理 -->
+	  <dependencies>
+        <!-- 启用此项引入SpringMVC框架 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+        <!-- 如果你使用Mongodb的话，启用这个配置项 -->
+        <!--
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+        -->
+        
+        <!-- 如果你使用Redis的话，启用这个配置项 -->
+        <!-- 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
+        -->
+        <!-- 如果你是使用Mysql的话，可以启用这个配置 -->
+        <!--
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        -->
+        <!-- Boncp 依赖，用于构建JDBC链接池 -->
+        <!--
+        <dependency>
+            <groupId>com.jolbox</groupId>
+            <artifactId>bonecp</artifactId>
+            <version>0.8.0.RELEASE</version>
+        </dependency>
+        -->
+        <!-- 如果你是使用Mybatis的话，可以启用这个配置 -->
+        <!--
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+	      -->
+        <!-- Logback 依赖 -->
+        <!-- 
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.0.13</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.0.13</version>
+        </dependency>
+        -->
+        <!-- Ehcache 依赖 -->
+        <!--
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache-core</artifactId>
+            <version>2.6.6</version>
+        </dependency>
+        -->
+    </dependencies>
+
+    <!-- 使用SpringBoot的Maven插件，这个插件可以帮助我们打包一个可执行的jar文件 -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
