@@ -6,7 +6,7 @@
 create database `springmvc`;
 use `springmvc`;
 create table `users`(
-  `id` int(10) not null primary key default 0,
+  `id` int(10) not null primary key auto_increment,
   `name` varchar(50) not null,
   `birthday` date default '0000-00-00',
   `mobile` varchar(20),
