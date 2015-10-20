@@ -13,7 +13,7 @@
 ## <a name="init-setup"></a>初次使用项目向导
 由于初次使用项目的时候你需要用maven去下载一些本地资源，否则你的Maven IDE插件可能无法正确加载项目（例如Eclipse的M2Eclipse就会有这种问题）。这里列出初始化步骤
 
-1. 首先你可以[点击这里下载本项目](https://github.com/jgnan/edu/raw/master/java/springmvc/resources/spring-boot-starter/spring-boot-starter-web.zip)
+1. 首先你可以[点击这里下载本项目](https://github.com/jgnan/edu/raw/master/java/springmvc/resources/spring-boot-starter-web/spring-boot-starter-web.zip)
 2. 把zip包解压，并且把它通过IDE的导入功能导入为Maven项目
 3. 如果你的Maven插件解释pom文件出错，请使用命令行进行pom的初始化依赖加载。方式如下：
   * 打开命令行
