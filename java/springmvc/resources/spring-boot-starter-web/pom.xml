@@ -3,8 +3,8 @@
     <modelVersion>4.0.0</modelVersion>
 	  <groupId>study.springboot.starter</groupId>
 	  <artifactId>web</artifactId>
+	  <packaging>war</packaging>
 	  <version>0.0.1-SNAPSHOT</version>
-    <package>war</package>
     <name>Spring Boot Prototype</name>
 	  <description>Demo project for spring mvc</description>
 	  <!-- All modifiers -->
