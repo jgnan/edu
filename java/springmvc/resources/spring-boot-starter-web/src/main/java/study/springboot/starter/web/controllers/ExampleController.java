@@ -42,8 +42,13 @@ public class ExampleController {
 		return "redirect:/examples"+id;
 	}
 	
-	@RequestMapping(value="/{id}/",method=RequestMethod.DELETE)
-	public String delete(Map<String, Object> model){
+	@RequestMapping(value="/{id}/delete",method=RequestMethod.POST)
+	public String delete(Map<String, Object> model,@PathVariable("id")String id){
 		return "redirect:/examples/";
 	}
+
+  @RequestMapping(value="/delete",method=RequestMethod.POST)
+  public String deleteAll(Map<String,Object> model){
+    return "redirect:/examples/";
+  }
 }

@@ -39,8 +39,13 @@ public class ExampleController {
 		return "";
 	}
 	
-	@RequestMapping(value="/{id}/",method=RequestMethod.DELETE)
+	@RequestMapping(value="/{id}/delete",method=RequestMethod.POST)
 	public String delete(Map<String, Object> model){
 		return "";
 	}
+
+  @RequestMapping(value="/delete",method=RequestMethod.POST)
+  public String deleteAll(Map<String, Object> model){
+    return "";
+  }
 }
