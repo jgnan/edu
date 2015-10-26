@@ -2,3 +2,8 @@ videos
 materials
 *.ppt
 *.key
+.settings
+.project
+.classpath
+target
+build
