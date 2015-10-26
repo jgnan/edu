@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/examples")
 public class ExampleController {
 	@RequestMapping("/")
-	public String list(Map<String, Object> model){
+	public String index(Map<String, Object> model){
 		return "/examples/index";
 	}
 	

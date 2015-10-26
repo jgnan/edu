@@ -8,9 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
+@RequestMapping("/examples")
 public class ExampleController {
 	@RequestMapping("/")
-	public String list(Map<String, Object> model){
+	public String index(Map<String, Object> model){
 		return "";
 	}
 	
