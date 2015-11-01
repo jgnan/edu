@@ -1,0 +1,11 @@
+PROJ_NAME=spring-boot-starter-web
+echo "start pack $PROJ_NAME ...";
+if [ -e "$PROJ_NAME.zip" ]; then
+  echo "$PROJ_NAME.zip exists in the project $PROJ_NAME, now remove it..."
+  rm -rf $PROJ_NAME.zip
+fi
+echo "removing project contents..."
+rm -rf .settings .classpath .project target
+echo "zipping project to $PROJ_NAME.zip"
+zip -r $PROJ_NAME.zip src pom.xml README.md
+echo "DONE!!"
