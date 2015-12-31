@@ -104,6 +104,19 @@
             <version>2.6.6</version>
         </dependency>
         -->
+        <!-- Every projects loves them! -->
+        <!-- Google guava project -->
+        <dependency>
+          <groupId>com.google.guava</groupId>
+          <artifactId>guava</artifactId>
+          <version>18.0</version>
+        </dependency>
+        <!-- apache commons utils -->
+        <dependency>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-lang3</artifactId>
+          <version>3.4</version>
+        </dependency>
     </dependencies>
 
     <!-- 使用SpringBoot的Maven插件，这个插件可以帮助我们打包一个可执行的jar文件 -->
