@@ -125,6 +125,12 @@
         <artifactId>commons-lang3</artifactId>
         <version>3.4</version>
       </dependency>
+      <!-- gson -->
+      <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>2.5</version>
+      </dependency>
 	</dependencies>
 
 	<!-- 使用SpringBoot的Maven插件，这个插件可以帮助我们打包一个可执行的jar文件 -->
