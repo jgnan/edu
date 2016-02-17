@@ -5,5 +5,9 @@ materials
 .settings
 .project
 .classpath
+.metadata
+.DS_Store
+.recommenders
+docs
 target
 build
