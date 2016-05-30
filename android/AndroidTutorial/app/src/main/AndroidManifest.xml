@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.shenit.helloworld">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <meta-data
+        android:name="DATABASE"
+        android:value="tutorial_android.db" />
+    <meta-data
+        android:name="VERSION"
+        android:value="1" />
+    <meta-data
+        android:name="QUERY_LOG"
+        android:value="true" />
+    <meta-data
+        android:name="DOMAIN_PACKAGE_NAME"
+        android:value="org.shenit.tutorial.android.entities" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ListExampleActivity" />
+        <activity android:name=".BookDetailActivity" />
+        <activity android:name=".drawable.SimpleDrawableExampleActivity" />
+        <activity android:name=".drawable.RemoteDrawableExampleActivity" />
+        <activity android:name=".AsyncTaskExampleActivity" />
+        <activity android:name=".ExecutorExampleActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".InteractExampleActivity" />
+        <activity android:name=".HelloWorldActivity" />
+        <activity android:name=".drawable.RemoteDrawableListExampleActivity" />
+        <activity android:name=".drawable.GlideExampleActivity" />
+        <activity android:name=".drawable.ShapeDrawableExampleActivity" />
+        <activity android:name=".drawable.DrawableMainActivity" />
+        <activity android:name=".drawable.OtherDrawableExampleActivity" />
+        <activity android:name=".ActivityLifeCycleExampleActivity" />
+        <activity android:name=".ReturnResultActivity" />
+        <activity android:name=".dataproc.DataProcessExamples" />
+        <activity android:name=".dataproc.JsonProcessExample" />
+        <activity android:name=".dataproc.InternalStorageExampleActivity" />
+        <activity android:name=".dataproc.SharedPreferencesExampleActivity" />
+        <activity android:name=".dataproc.ExternalStorageExampleActivity" />
+        <activity android:name=".dataproc.SQLiteStorageExampleActivity" />
+        <activity android:name=".AsyncTaskLoaderExampleActivity" />
+        <activity android:name=".asynccall.AsyncCallExamplesActivity"></activity>
+    </application>
+
+</manifest>
