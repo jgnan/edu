@@ -1,4 +1,4 @@
-package org.shenit.helloworld;
+package org.shenit.tutorial.android;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
