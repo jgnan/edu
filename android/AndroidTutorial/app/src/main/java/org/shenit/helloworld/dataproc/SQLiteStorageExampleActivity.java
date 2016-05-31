@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import org.shenit.helloworld.R;
+import org.shenit.helloworld.entities.SugarArticle;
 
 public class SQLiteStorageExampleActivity extends AppCompatActivity {
     private EditText idText;
@@ -59,12 +60,11 @@ public class SQLiteStorageExampleActivity extends AppCompatActivity {
             Toast.makeText(this,"Could not delete record without id!!", Toast.LENGTH_SHORT).show();
             return;
         }
-        SQLiteDatabase db = sqlHelper.getWritableDatabase();
-        db.delete("articles","id = ?",new String[]{idStr});
-        idText.setText(null);
-        titleText.setText(null);
-        authorText.setText(null);
-        contentText.setText(null);
+//        SQLiteDatabase db = sqlHelper.getWritableDatabase();
+//        db.delete("articles","id = ?",new String[]{idStr});
+        SugarArticle art = SugarArticle.findById(SugarArticle.class,Long.parseLong(idStr));
+        art.delete();
+        setData(null);
         Toast.makeText(this,"Delete record["+idStr+"] success!",Toast.LENGTH_SHORT).show();
     }
 
@@ -74,39 +74,63 @@ public class SQLiteStorageExampleActivity extends AppCompatActivity {
             Toast.makeText(this,"No id to load!",Toast.LENGTH_SHORT).show();
             return;
         }
-        Cursor cursor = sqlHelper.getReadableDatabase().query("articles",
-                new String[]{"id","title","author","content"},    //columns
-                "id = ?",new String[]{idStr},
-                null,null,null,null);
-        if(cursor.moveToNext()){
-            idText.setText(cursor.getString(0));
-            titleText.setText(cursor.getString(1));
-            authorText.setText(cursor.getString(2));
-            contentText.setText(cursor.getString(3));
+//        Cursor cursor = sqlHelper.getReadableDatabase().query("articles",
+//                new String[]{"id","title","author","content"},    //columns
+//                "id = ?",new String[]{idStr},
+//                null,null,null,null);
+//        if(cursor.moveToNext()){
+//            idText.setText(cursor.getString(cursor.getColumnIndex("id")));
+//            titleText.setText(cursor.getString(cursor.getColumnIndex("title")));
+//            authorText.setText(cursor.getString(cursor.getColumnIndex("author")));
+//            contentText.setText(cursor.getString(cursor.getColumnIndex("content")));
+//        }else{
+//            titleText.setText(null);
+//            authorText.setText(null);
+//            contentText.setText(null);
+//        }
+        SugarArticle art = SugarArticle.findById(SugarArticle.class, Long.parseLong(idStr));
+        setData(art);
+
+        Toast.makeText(this,"Loaded from database finished",Toast.LENGTH_SHORT).show();
+    }
+
+    private void setData(SugarArticle art) {
+        if(art != null){
+            idText.setText(String.valueOf(art.getId()));
+            titleText.setText(art.title);
+            authorText.setText(art.author);
+            contentText.setText(art.content);
         }else{
+            idText.setText(null);
             titleText.setText(null);
             authorText.setText(null);
             contentText.setText(null);
         }
-        Toast.makeText(this,"Loaded from database finished",Toast.LENGTH_SHORT).show();
+
     }
 
     private void doSave() {
-        SQLiteDatabase db = sqlHelper.getWritableDatabase();
-        String idStr = idText.getText().toString();
-        Integer id = null;
-        if(!TextUtils.isEmpty(idStr) && TextUtils.isDigitsOnly(idStr)) id = Integer.parseInt(idStr);
-        ContentValues record = new ContentValues();
-        record.put("title",titleText.getText().toString());
-        record.put("author",authorText.getText().toString());
-        record.put("content",contentText.getText().toString());
-        if(id == null){
-            //execute an insert sql
-            long newId = db.insert("articles", null, record);
-            idText.setText(String.valueOf(newId));
-        }else{
-            db.update("articles",record," id = ?", new String[]{id.toString()});
-        }
+//        SQLiteDatabase db = sqlHelper.getWritableDatabase();
+//        String idStr = idText.getText().toString();
+//        Integer id = null;
+//        if(!TextUtils.isEmpty(idStr) && TextUtils.isDigitsOnly(idStr)) id = Integer.parseInt(idStr);
+//        ContentValues record = new ContentValues();
+//        record.put("title",titleText.getText().toString());
+//        record.put("author", authorText.getText().toString());
+//        record.put("content", contentText.getText().toString());
+//        if(id == null){
+//            //execute an insert sql
+//            long newId = db.insert("articles", null, record);
+//            idText.setText(String.valueOf(newId));
+//        } else {
+//            db.update("articles", record, " id = ? ", new String[]{id.toString()});
+//        }
+        SugarArticle art = new SugarArticle();
+        art.title = titleText.getText().toString();
+        art.content = contentText.getText().toString();
+        art.author = authorText.getText().toString();
+        art.save();
+        idText.setText(String.valueOf(art.getId()));
         Toast.makeText(this,"Save to database success!",Toast.LENGTH_SHORT).show();
     }
 }

@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.shenit.helloworld.R;
 
@@ -38,9 +39,13 @@ public class JsonProcessExample extends AppCompatActivity {
 //        } catch (JSONException e) {
 //            e.printStackTrace();
 //        }
-        Map<String,Object> data = gson.fromJson(json,new TypeToken<Map<String,Object>>(){}.getType());
-        titleText.setText((String) data.get("title"));
-        contentText.setText((String)data.get("content"));
+//        Map<String,Object> data = gson.fromJson(json,new TypeToken<Map<String,Object>>(){}.getType());
+//        titleText.setText((String) data.get("title"));
+//        contentText.setText((String)data.get("content"));
+
+        Article art = gson.fromJson(json,Article.class);
+        titleText.setText(art.title);
+        contentText.setText(art.content);
 
         Button button = (Button) findViewById(R.id.save);
         button.setOnClickListener(new View.OnClickListener() {
@@ -56,7 +61,7 @@ public class JsonProcessExample extends AppCompatActivity {
         String content = contentText.getEditableText().toString();
         Map<String,String> data = new HashMap<String,String>();
         data.put("title",title);
-        data.put("content",content);
+        data.put("content", content);
 //        JSONObject json = new JSONObject(data);
 //        resultText.setText(json.toString());
 

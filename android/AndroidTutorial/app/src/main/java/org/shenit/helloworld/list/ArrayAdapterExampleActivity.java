@@ -1,4 +1,4 @@
-package org.shenit.helloworld;
+package org.shenit.helloworld.list;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,6 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import org.shenit.helloworld.R;
+
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -18,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class ListExampleActivity extends Activity {
+public class ArrayAdapterExampleActivity extends Activity {
 
 
     @Override
@@ -41,7 +43,7 @@ public class ListExampleActivity extends Activity {
 //        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
 //            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Intent intent = new Intent(ListExampleActivity.this,BookDetailActivity.class);
+//                Intent intent = new Intent(ArrayAdapterExampleActivity.this,BookDetailActivity.class);
 //                Bundle bundle = new Bundle();
 //                Book book = (Book) view.getTag();
 //                bundle.putString("title",book.title);

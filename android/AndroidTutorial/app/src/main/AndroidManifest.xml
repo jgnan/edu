@@ -21,11 +21,12 @@
 
     <application
         android:allowBackup="true"
+        android:name=".Application"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListExampleActivity" />
+        <activity android:name=".list.ArrayAdapterExampleActivity" />
         <activity android:name=".BookDetailActivity" />
         <activity android:name=".drawable.SimpleDrawableExampleActivity" />
         <activity android:name=".drawable.RemoteDrawableExampleActivity" />
@@ -56,7 +57,9 @@
         <activity android:name=".dataproc.ExternalStorageExampleActivity" />
         <activity android:name=".dataproc.SQLiteStorageExampleActivity" />
         <activity android:name=".AsyncTaskLoaderExampleActivity" />
-        <activity android:name=".asynccall.AsyncCallExamplesActivity"></activity>
+        <activity android:name=".asynccall.AsyncCallExamplesActivity" />
+        <activity android:name=".list.ListExamplesActivity" />
+        <activity android:name=".list.CursorAdapterExampleActivity"></activity>
     </application>
 
 </manifest>

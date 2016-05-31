@@ -19,8 +19,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="List Example"
-        android:id="@+id/list_example_link"
+        android:text="List Examples"
+        android:id="@+id/list_examples_link"
         />
     <Button
         android:layout_width="match_parent"

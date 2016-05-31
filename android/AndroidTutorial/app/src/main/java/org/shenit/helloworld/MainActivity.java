@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import org.shenit.helloworld.asynccall.AsyncCallExamplesActivity;
 import org.shenit.helloworld.dataproc.DataProcessExamples;
 import org.shenit.helloworld.drawable.DrawableMainActivity;
+import org.shenit.helloworld.list.ListExamplesActivity;
 
 import static org.shenit.helloworld.Utils.bind;
 
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bind(this, R.id.interact_example_link, InteractExampleActivity.class);
-        bind(this,R.id.list_example_link, ListExampleActivity.class);
+        bind(this,R.id.list_examples_link, ListExamplesActivity.class);
         bind(this,R.id.drawable_examples_link, DrawableMainActivity.class);
         bind(this,R.id.async_call_examples_link, AsyncCallExamplesActivity.class);
         bind(this, R.id.act_life_cycle_example_link, ActivityLifeCycleExampleActivity.class);

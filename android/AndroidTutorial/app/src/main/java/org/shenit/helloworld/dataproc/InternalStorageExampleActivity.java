@@ -97,7 +97,7 @@ public class InternalStorageExampleActivity extends AppCompatActivity {
         try {
 //            writer = new FileWriter(file);
             writer = new OutputStreamWriter(openFileOutput(fileName, Context.MODE_PRIVATE));
-//            writer.append(Utils.gson().toJson(art));
+            writer.append(Utils.gson().toJson(art));
         } catch (IOException e) {
             e.printStackTrace();
         }finally{
