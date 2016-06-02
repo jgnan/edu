@@ -16,7 +16,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import org.shenit.tutorial.R;
+import org.shenit.tutorial.android.R;
 
 import java.io.IOException;
 import java.io.InputStream;

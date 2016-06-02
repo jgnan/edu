@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatImageView;
 
-import org.shenit.tutorial.R;
+import org.shenit.tutorial.android.R;
 
 import java.io.IOException;
 import java.io.InputStream;

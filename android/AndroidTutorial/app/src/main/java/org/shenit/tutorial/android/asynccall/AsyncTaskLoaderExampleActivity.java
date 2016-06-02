@@ -1,4 +1,4 @@
-package org.shenit.tutorial.android;
+package org.shenit.tutorial.android.asynccall;
 
 import android.app.LoaderManager;
 import android.app.ProgressDialog;
@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.shenit.tutorial.R;
+import org.shenit.tutorial.android.R;
 
 import java.io.BufferedReader;
 import java.io.IOException;

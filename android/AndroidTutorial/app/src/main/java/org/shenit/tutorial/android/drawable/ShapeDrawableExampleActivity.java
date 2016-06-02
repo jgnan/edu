@@ -3,7 +3,7 @@ package org.shenit.tutorial.android.drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import org.shenit.tutorial.R;
+import org.shenit.tutorial.android.R;
 
 public class ShapeDrawableExampleActivity extends AppCompatActivity {
 

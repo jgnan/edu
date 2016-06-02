@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import org.shenit.tutorial.R;
+import org.shenit.tutorial.android.R;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -35,6 +35,7 @@ public class ArrayAdapterExampleActivity extends Activity {
         }
 
         list.setAdapter(new BookAdapter(this,0,books));
+
 //        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
 //            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

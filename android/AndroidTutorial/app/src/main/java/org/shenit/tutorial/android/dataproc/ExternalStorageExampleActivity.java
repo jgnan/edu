@@ -13,8 +13,9 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import org.apache.commons.io.IOUtils;
-import org.shenit.tutorial.R;
+import org.shenit.tutorial.android.R;
 import org.shenit.tutorial.android.Utils;
+import org.shenit.tutorial.android.entities.Article;
 
 import java.io.BufferedReader;
 import java.io.File;

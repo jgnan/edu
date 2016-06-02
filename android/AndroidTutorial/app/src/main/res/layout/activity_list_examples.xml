@@ -14,4 +14,9 @@
         android:layout_height="wrap_content"
         android:text="Array Adapter Example"
         android:id="@+id/array_adapter_example"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cursor Adapter Example"
+        android:id="@+id/cursor_adapter_example"/>
 </LinearLayout>

@@ -1,8 +1,5 @@
 package org.shenit.tutorial.android.dataproc;
 
-import android.content.ContentValues;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -14,12 +11,11 @@ import android.widget.Toast;
 import org.shenit.tutorial.android.R;
 import org.shenit.tutorial.android.entities.Article;
 
-public class SQLiteStorageExampleActivity extends AppCompatActivity {
+public class SugarOrmExampleActivity extends AppCompatActivity {
     private EditText idText;
     private EditText titleText;
     private EditText authorText;
     private EditText contentText;
-    private ArticleSQLiteOpenHelper sqlHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +47,6 @@ public class SQLiteStorageExampleActivity extends AppCompatActivity {
                 doDelete();
             }
         });
-        sqlHelper = new ArticleSQLiteOpenHelper(this);
     }
 
     private void doDelete() {
@@ -60,8 +55,8 @@ public class SQLiteStorageExampleActivity extends AppCompatActivity {
             Toast.makeText(this,"Could not delete record without id!!", Toast.LENGTH_SHORT).show();
             return;
         }
-        SQLiteDatabase db = sqlHelper.getWritableDatabase();
-        db.delete("articles","id = ?",new String[]{idStr});
+        Article art = Article.findById(Article.class, Long.parseLong(idStr));
+        art.delete();
         setData(null);
         Toast.makeText(this,"Delete record["+idStr+"] success!",Toast.LENGTH_SHORT).show();
     }
@@ -72,18 +67,8 @@ public class SQLiteStorageExampleActivity extends AppCompatActivity {
             Toast.makeText(this,"No id to load!",Toast.LENGTH_SHORT).show();
             return;
         }
-        Cursor cursor = sqlHelper.getReadableDatabase().query("articles",
-                new String[]{"id", "title", "author", "content"},    //columns
-                "id = ?", new String[]{idStr},
-                null, null, null, null);
-        if(cursor.moveToNext()){
-            idText.setText(cursor.getString(cursor.getColumnIndex("id")));
-            titleText.setText(cursor.getString(cursor.getColumnIndex("title")));
-            authorText.setText(cursor.getString(cursor.getColumnIndex("author")));
-            contentText.setText(cursor.getString(cursor.getColumnIndex("content")));
-        }else{
-            setData(null);
-        }
+        Article art = Article.findById(Article.class, Long.parseLong(idStr));
+        setData(art);
 
         Toast.makeText(this,"Loaded from database finished",Toast.LENGTH_SHORT).show();
     }
@@ -104,21 +89,12 @@ public class SQLiteStorageExampleActivity extends AppCompatActivity {
     }
 
     private void doSave() {
-        SQLiteDatabase db = sqlHelper.getWritableDatabase();
-        String idStr = idText.getText().toString();
-        Integer id = null;
-        if(!TextUtils.isEmpty(idStr) && TextUtils.isDigitsOnly(idStr)) id = Integer.parseInt(idStr);
-        ContentValues record = new ContentValues();
-        record.put("title",titleText.getText().toString());
-        record.put("author", authorText.getText().toString());
-        record.put("content", contentText.getText().toString());
-        if(id == null){
-            //execute an insert sql
-            long newId = db.insert("articles", null, record);
-            idText.setText(String.valueOf(newId));
-        } else {
-            db.update("articles", record, " id = ? ", new String[]{id.toString()});
-        }
+        Article art = new Article();
+        art.title = titleText.getText().toString();
+        art.content = contentText.getText().toString();
+        art.author = authorText.getText().toString();
+        art.save();
+        idText.setText(String.valueOf(art.getId()));
         Toast.makeText(this,"Save to database success!",Toast.LENGTH_SHORT).show();
     }
 }

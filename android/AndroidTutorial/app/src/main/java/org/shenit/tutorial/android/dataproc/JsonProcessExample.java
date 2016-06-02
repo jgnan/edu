@@ -9,7 +9,8 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 
-import org.shenit.tutorial.R;
+import org.shenit.tutorial.android.R;
+import org.shenit.tutorial.android.entities.Article;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,12 +1,10 @@
 package org.shenit.tutorial.android.asynccall;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-import org.shenit.tutorial.android.AsyncTaskExampleActivity;
-import org.shenit.tutorial.android.AsyncTaskLoaderExampleActivity;
+import org.shenit.tutorial.android.R;
 import org.shenit.tutorial.android.ExecutorExampleActivity;
-import org.shenit.tutorial.R;
 
 import static org.shenit.tutorial.android.Utils.bind;
 

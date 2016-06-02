@@ -1,12 +1,10 @@
 package org.shenit.tutorial.android;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import org.shenit.tutorial.R;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

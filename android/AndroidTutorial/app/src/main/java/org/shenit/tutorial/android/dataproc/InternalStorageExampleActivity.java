@@ -8,8 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import org.shenit.tutorial.R;
+import org.shenit.tutorial.android.R;
 import org.shenit.tutorial.android.Utils;
+import org.shenit.tutorial.android.entities.Article;
 
 import java.io.BufferedReader;
 import java.io.IOException;

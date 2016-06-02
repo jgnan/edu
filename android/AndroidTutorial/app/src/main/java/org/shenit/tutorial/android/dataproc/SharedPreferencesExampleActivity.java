@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import org.shenit.tutorial.R;
+import org.shenit.tutorial.android.R;
 
 public class SharedPreferencesExampleActivity extends AppCompatActivity {
     private EditText titleText;

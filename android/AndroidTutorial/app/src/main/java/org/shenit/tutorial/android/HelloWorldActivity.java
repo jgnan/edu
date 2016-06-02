@@ -1,9 +1,7 @@
 package org.shenit.tutorial.android;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-import org.shenit.tutorial.R;
+import android.support.v7.app.AppCompatActivity;
 
 public class HelloWorldActivity extends AppCompatActivity {
 

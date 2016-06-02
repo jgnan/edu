@@ -5,8 +5,6 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import org.shenit.tutorial.R;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;

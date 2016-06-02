@@ -44,6 +44,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Data Process Examples"
-        android:id="@+id/data_process_examples"
+        android:id="@+id/data_process_examples_link"
         />
 </LinearLayout>
