@@ -14,5 +14,7 @@ public class DataProviderExamplesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_provider_examples);
         bind(this, R.id.simple_data_provider_example_link, SimpleDataProviderExampleActivity.class);
+        bind(this, R.id.cursor_loader_example_link,CursorLoaderExampleActivity.class);
+        bind(this, R.id.contact_data_provider_example_link,ContactDataProviderExampleActivity.class);
     }
 }

@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import org.shenit.tutorial.android.R;
@@ -21,6 +23,5 @@ public class SimpleDataProviderExampleActivity extends AppCompatActivity {
                 null,null,null,null);
         ListView list = (ListView) findViewById(R.id.list_view);
         list.setAdapter(new ArticleCursorAdapter(this,cursor));
-
     }
 }

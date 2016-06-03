@@ -14,4 +14,14 @@
         android:layout_height="wrap_content"
         android:text="Simple Data Provider Example"
         android:id="@+id/simple_data_provider_example_link"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cursor Loader Example"
+        android:id="@+id/cursor_loader_example_link"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contact Data Provider Example"
+        android:id="@+id/contact_data_provider_example_link"/>
 </LinearLayout>
