@@ -73,14 +73,14 @@ public class SQLiteStorageExampleActivity extends AppCompatActivity {
             return;
         }
         Cursor cursor = sqlHelper.getReadableDatabase().query("articles",
-                new String[]{"id", "title", "author", "content"},    //columns
-                "id = ?", new String[]{idStr},
+                new String[]{"ID", "TITLE", "AUTHOR", "CONTENT"},    //columns
+                "ID = ?", new String[]{idStr},
                 null, null, null, null);
         if(cursor.moveToNext()){
-            idText.setText(cursor.getString(cursor.getColumnIndex("id")));
-            titleText.setText(cursor.getString(cursor.getColumnIndex("title")));
-            authorText.setText(cursor.getString(cursor.getColumnIndex("author")));
-            contentText.setText(cursor.getString(cursor.getColumnIndex("content")));
+            idText.setText(cursor.getString(cursor.getColumnIndex("ID")));
+            titleText.setText(cursor.getString(cursor.getColumnIndex("TITLE")));
+            authorText.setText(cursor.getString(cursor.getColumnIndex("AUTHOR")));
+            contentText.setText(cursor.getString(cursor.getColumnIndex("CONTENT")));
         }else{
             setData(null);
         }

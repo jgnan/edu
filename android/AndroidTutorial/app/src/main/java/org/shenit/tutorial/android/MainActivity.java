@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import org.shenit.tutorial.android.asynccall.AsyncCallExamplesActivity;
 import org.shenit.tutorial.android.dataproc.DataProcessExamplesActivity;
+import org.shenit.tutorial.android.dataprovider.DataProviderExamplesActivity;
 import org.shenit.tutorial.android.drawable.DrawableMainActivity;
 import org.shenit.tutorial.android.list.ListExamplesActivity;
 
@@ -22,5 +23,6 @@ public class MainActivity extends AppCompatActivity {
         Utils.bind(this, R.id.async_call_examples_link, AsyncCallExamplesActivity.class);
         Utils.bind(this, R.id.act_life_cycle_example_link, ActivityLifeCycleExampleActivity.class);
         Utils.bind(this, R.id.data_process_examples_link, DataProcessExamplesActivity.class);
+        Utils.bind(this, R.id.data_provider_examples_link, DataProviderExamplesActivity.class);
     }
 }

@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class ArticleSQLiteOpenHelper extends SQLiteOpenHelper {
     public static final String ARTICLES_TABLE_NAME = "articles";
 
-    private static final String DATABASE_NAME = "helloworld";
+    private static final String DATABASE_NAME = "helloworld.db";
     //This number will affect whether called the onUpgrade method if it is higher than the last version in database
     private static final int DATABASE_VERSION = 1;
 
@@ -40,9 +40,23 @@ public class ArticleSQLiteOpenHelper extends SQLiteOpenHelper {
         System.out.println("[onCreate] We run the onUpgrade method in ArticleSQLiteOpenHelper!!");
     }
 
-    public Cursor queryArticlesForAdapter() {
-        Cursor cursor =  getWritableDatabase().rawQuery("select id as _id, title, author from articles",null);
-        int count = cursor.getCount();
-        return cursor;
+    /**
+     * List all articles
+     * @return
+     */
+    public Cursor listArticles() {
+        return getReadableDatabase()
+                .rawQuery("select ID as _id, TITLE, AUTHOR,CONTENT from articles order by ID desc", null);
+    }
+
+    /**
+     * Get a single article record by id
+     * @param id
+     * @return
+     */
+    public Cursor findArticleById(String id) {
+        return getReadableDatabase()
+                .rawQuery("select ID as _id, TITLE, AUTHOR,CONTENT from articles where id = ?",
+                        new String[]{id});
     }
 }

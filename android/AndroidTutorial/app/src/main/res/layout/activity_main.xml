@@ -46,4 +46,10 @@
         android:text="Data Process Examples"
         android:id="@+id/data_process_examples_link"
         />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Data Provider Examples"
+        android:id="@+id/data_provider_examples_link"
+        />
 </LinearLayout>

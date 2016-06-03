@@ -6,19 +6,6 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-    <meta-data
-        android:name="DATABASE"
-        android:value="tutorial_android.db" />
-    <meta-data
-        android:name="VERSION"
-        android:value="1" />
-    <meta-data
-        android:name="QUERY_LOG"
-        android:value="true" />
-    <meta-data
-        android:name="DOMAIN_PACKAGE_NAME"
-        android:value="org.shenit.tutorial.android.entities" />
-
     <application
         android:name=".Application"
         android:allowBackup="true"
@@ -26,6 +13,18 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="DATABASE"
+            android:value="helloworld.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="1" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="org.shenit.tutorial.android.entities" />
         <activity android:name=".list.ArrayAdapterExampleActivity" />
         <activity android:name=".BookDetailActivity" />
         <activity android:name=".drawable.SimpleDrawableExampleActivity" />
@@ -61,6 +60,18 @@
         <activity android:name=".asynccall.AsyncCallExamplesActivity" />
         <activity android:name=".list.ListExamplesActivity" />
         <activity android:name=".list.CursorAdapterExampleActivity" />
+
+        <provider
+            android:name=".dataprovider.ArticlesDataProvider"
+            android:authorities="org.shenit.tutorial.android"
+            android:permission="">
+            <path-permission
+                android:pathPattern="org.shenit.tutorial.android/articles/*"
+                android:permission="org.shenit.tutorial.android.ARTICLES_PERMISSION" />
+        </provider>
+
+        <activity android:name=".dataprovider.DataProviderExamplesActivity" />
+        <activity android:name=".dataprovider.SimpleDataProviderExampleActivity"></activity>
     </application>
 
 </manifest>
