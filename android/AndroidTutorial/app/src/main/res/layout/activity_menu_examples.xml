@@ -24,14 +24,4 @@
         android:layout_height="wrap_content"
         android:text="Popup Menu Example"
         android:id="@+id/popup_menu_example"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Actionbar Example"
-        android:id="@+id/actionbar_example"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Drawer Example"
-        android:id="@+id/drawer_example"/>
 </LinearLayout>

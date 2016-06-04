@@ -82,7 +82,9 @@
         <activity android:name=".menu.ContextMenuExampleActivity" />
         <activity android:name=".fragment.SimpleFragmentExampleActivity" />
         <activity android:name=".fragment.FragmentExamplesActivity" />
-        <activity android:name=".fragment.LifeCycleExampleActivity"></activity>
+        <activity android:name=".fragment.LifeCycleExampleActivity" />
+        <activity android:name=".menu.PopupMenuExampleActivity" />
+        <activity android:name=".list.PullToRefreshExampleActivity"></activity>
     </application>
 
 </manifest>

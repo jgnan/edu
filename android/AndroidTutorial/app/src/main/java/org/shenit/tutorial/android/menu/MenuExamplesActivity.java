@@ -14,5 +14,6 @@ public class MenuExamplesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu_examples);
         Utils.bind(this, R.id.top_menu_example, TopMenuExampleActivity.class);
         Utils.bind(this,R.id.context_menu_example,ContextMenuExampleActivity.class);
+        Utils.bind(this,R.id.popup_menu_example,PopupMenuExampleActivity.class);
     }
 }

@@ -50,6 +50,17 @@ public class ArticleSQLiteOpenHelper extends SQLiteOpenHelper {
     }
 
     /**
+     * List all articles
+     * @return
+     */
+    public Cursor listArticles(int page,int size) {
+        int startIndex = Math.max(0, (page - 1) * size);
+        return getReadableDatabase()
+                .rawQuery("select ID as _id, title, author,content from articles order by ID desc limit ? offset ?",
+                        new String[]{String.valueOf(size),String.valueOf(startIndex)});
+    }
+
+    /**
      * Get a single article record by id
      * @param id
      * @return

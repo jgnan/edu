@@ -15,5 +15,6 @@ public class ListExamplesActivity extends AppCompatActivity {
 
         Utils.bind(this, R.id.array_adapter_example, ArrayAdapterExampleActivity.class);
         Utils.bind(this,R.id.cursor_adapter_example,CursorAdapterExampleActivity.class);
+        Utils.bind(this,R.id.pull_to_refresh_example,PullToRefreshExampleActivity.class);
     }
 }
