@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- show ifRoom flag -->
+    <item
+        android:id="@+id/action_search"
+        android:orderInCategory="200"
+        android:title="Search"
+        android:icon="@drawable/ic_search_24dp"
+        app:showAsAction="ifRoom"/>
+    <!-- most simple example -->
+    <item
+        android:id="@+id/action_new"
+        android:orderInCategory="100"
+        android:title="New"
+        app:showAsAction="never"/>
+   <!-- submenu example-->
+    <item
+        android:id="@+id/action_more"
+        android:orderInCategory="100"
+        android:title="More"
+        app:showAsAction="never">
+        <menu>
+            <item android:id="@+id/action_share"
+                android:title="Share"/>
+            <item android:id="@+id/action_settings"
+                android:title="Settings"/>
+        </menu>
+    </item>
+</menu>

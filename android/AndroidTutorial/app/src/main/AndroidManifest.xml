@@ -7,7 +7,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
-
     <application
         android:name=".Application"
         android:allowBackup="true"
@@ -29,7 +28,7 @@
             android:value="org.shenit.tutorial.android.entities" />
 
         <activity android:name=".list.ArrayAdapterExampleActivity" />
-        <activity android:name=".BookDetailActivity" />
+        <activity android:name=".list.BookDetailActivity" />
         <activity android:name=".drawable.SimpleDrawableExampleActivity" />
         <activity android:name=".drawable.RemoteDrawableExampleActivity" />
         <activity android:name=".asynccall.AsyncTaskExampleActivity" />
@@ -76,7 +75,14 @@
         <activity android:name=".dataprovider.DataProviderExamplesActivity" />
         <activity android:name=".dataprovider.SimpleDataProviderExampleActivity" />
         <activity android:name=".dataprovider.CursorLoaderExampleActivity" />
-        <activity android:name=".dataprovider.ContactDataProviderExampleActivity"/>
+        <activity android:name=".dataprovider.ContactDataProviderExampleActivity" />
+        <activity android:name=".dataprovider.ContactEntityActivity" />
+        <activity android:name=".menu.MenuExamplesActivity" />
+        <activity android:name=".menu.TopMenuExampleActivity" />
+        <activity android:name=".menu.ContextMenuExampleActivity" />
+        <activity android:name=".fragment.SimpleFragmentExampleActivity" />
+        <activity android:name=".fragment.FragmentExamplesActivity" />
+        <activity android:name=".fragment.LifeCycleExampleActivity"></activity>
     </application>
 
 </manifest>

@@ -90,6 +90,8 @@ public class SugarOrmExampleActivity extends AppCompatActivity {
 
     private void doSave() {
         Article art = new Article();
+        String idStr = idText.getText().toString();
+        if(!TextUtils.isEmpty(idStr)  && TextUtils.isDigitsOnly(idStr)) art.setId(Long.parseLong(idStr));
         art.title = titleText.getText().toString();
         art.content = contentText.getText().toString();
         art.author = authorText.getText().toString();

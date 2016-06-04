@@ -18,10 +18,10 @@ public class ArticleSQLiteOpenHelper extends SQLiteOpenHelper {
     //SQLITE is case sensitive, so keep use column in lower snake case will be helpful in your coding
     private static final String ARTICLES_TABLE_CREATE =
             "CREATE TABLE " + ARTICLES_TABLE_NAME + " (" +
-                    "id INTEGER PRIMARY KEY AUTOINCREMENT,"+
-                    "title TEXT NOT NULL, " +
-                    "author TEXT, " +
-                    "content TEXT);";
+                    "ID INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                    "TITLE TEXT NOT NULL, " +
+                    "AUTHOR TEXT, " +
+                    "CONTENT TEXT);";
 
     public ArticleSQLiteOpenHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -46,7 +46,7 @@ public class ArticleSQLiteOpenHelper extends SQLiteOpenHelper {
      */
     public Cursor listArticles() {
         return getReadableDatabase()
-                .rawQuery("select ID as _id, TITLE, AUTHOR,CONTENT from articles order by ID desc", null);
+                .rawQuery("select ID as _id, title, author,content from articles order by ID desc", null);
     }
 
     /**
@@ -56,7 +56,7 @@ public class ArticleSQLiteOpenHelper extends SQLiteOpenHelper {
      */
     public Cursor findArticleById(String id) {
         return getReadableDatabase()
-                .rawQuery("select ID as _id, TITLE, AUTHOR,CONTENT from articles where id = ?",
+                .rawQuery("select ID as _id, title, author,content from articles where id = ?",
                         new String[]{id});
     }
 }

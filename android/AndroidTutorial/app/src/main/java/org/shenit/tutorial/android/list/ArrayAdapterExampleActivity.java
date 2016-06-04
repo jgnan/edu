@@ -2,9 +2,11 @@ package org.shenit.tutorial.android.list;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -36,20 +38,20 @@ public class ArrayAdapterExampleActivity extends Activity {
 
         list.setAdapter(new BookAdapter(this,0,books));
 
-//        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Intent intent = new Intent(ArrayAdapterExampleActivity.this,BookDetailActivity.class);
-//                Bundle bundle = new Bundle();
-//                Book book = (Book) view.getTag();
-//                bundle.putString("title",book.title);
-//                bundle.putString("author",book.author);
-//                bundle.putString("content",book.content);
-//                bundle.putLong("publish",book.publishDate.getTime());
-//                intent.putExtras(bundle);
-//                startActivity(intent);
-//            }
-//        });
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(ArrayAdapterExampleActivity.this,BookDetailActivity.class);
+                Bundle bundle = new Bundle();
+                Book book = (Book) view.getTag();
+                bundle.putString("title",book.title);
+                bundle.putString("author",book.author);
+                bundle.putString("content",book.content);
+                bundle.putLong("publish",book.publishDate.getTime());
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
     }
 
     private class Book{

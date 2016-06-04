@@ -19,6 +19,12 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Fragment Examples"
+        android:id="@+id/fragment_examples_link"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="List Examples"
         android:id="@+id/list_examples_link"
         />
@@ -45,6 +51,12 @@
         android:layout_height="wrap_content"
         android:text="Data Process Examples"
         android:id="@+id/data_process_examples_link"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Menu Examples"
+        android:id="@+id/menu_examples_link"
         />
     <Button
         android:layout_width="match_parent"
