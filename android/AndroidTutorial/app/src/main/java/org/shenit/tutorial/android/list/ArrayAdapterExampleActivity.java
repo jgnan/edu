@@ -26,7 +26,6 @@ public class ArrayAdapterExampleActivity extends Activity {
         setContentView(R.layout.activity_list_view);
         ListView list = (ListView) findViewById(R.id.list_view);
 
-
         List<Book> books = new ArrayList<Book>();
         //添加100条记录
         for(int i=0;i<100;i++) {

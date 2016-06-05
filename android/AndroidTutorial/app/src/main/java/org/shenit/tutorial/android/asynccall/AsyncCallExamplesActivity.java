@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import org.shenit.tutorial.android.R;
-import org.shenit.tutorial.android.ExecutorExampleActivity;
 
 import static org.shenit.tutorial.android.Utils.bind;
 

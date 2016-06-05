@@ -10,6 +10,7 @@ import org.shenit.tutorial.android.drawable.DrawableMainActivity;
 import org.shenit.tutorial.android.fragment.FragmentExamplesActivity;
 import org.shenit.tutorial.android.list.ListExamplesActivity;
 import org.shenit.tutorial.android.menu.MenuExamplesActivity;
+import org.shenit.tutorial.android.pager.PagerExamplesActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -28,5 +29,7 @@ public class MainActivity extends AppCompatActivity {
         Utils.bind(this, R.id.data_process_examples_link, DataProcessExamplesActivity.class);
         Utils.bind(this, R.id.menu_examples_link, MenuExamplesActivity.class);
         Utils.bind(this, R.id.data_provider_examples_link, DataProviderExamplesActivity.class);
+        Utils.bind(this, R.id.pager_examples_link, PagerExamplesActivity.class);
+        Utils.bind(this, R.id.return_result_example_link, ReturnResultActivity.class);
     }
 }

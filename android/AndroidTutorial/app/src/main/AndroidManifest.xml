@@ -32,7 +32,7 @@
         <activity android:name=".drawable.SimpleDrawableExampleActivity" />
         <activity android:name=".drawable.RemoteDrawableExampleActivity" />
         <activity android:name=".asynccall.AsyncTaskExampleActivity" />
-        <activity android:name=".ExecutorExampleActivity" />
+        <activity android:name=".asynccall.ExecutorExampleActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main">
@@ -65,8 +65,7 @@
 
         <provider
             android:name=".dataprovider.ArticlesDataProvider"
-            android:authorities="org.shenit.tutorial.android"
-            android:permission="">
+            android:authorities="org.shenit.tutorial.android">
             <path-permission
                 android:pathPattern="org.shenit.tutorial.android/articles/*"
                 android:permission="org.shenit.tutorial.android.ARTICLES_PERMISSION" />
@@ -84,7 +83,10 @@
         <activity android:name=".fragment.FragmentExamplesActivity" />
         <activity android:name=".fragment.LifeCycleExampleActivity" />
         <activity android:name=".menu.PopupMenuExampleActivity" />
-        <activity android:name=".list.PullToRefreshExampleActivity"></activity>
+        <activity android:name=".list.PullToRefreshExampleActivity" />
+        <activity android:name=".pager.PagerExamplesActivity" />
+        <activity android:name=".pager.ViewPagerExampleActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".FetchResultActivity"></activity>
     </application>
 
 </manifest>

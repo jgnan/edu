@@ -1,9 +1,11 @@
-package org.shenit.tutorial.android;
+package org.shenit.tutorial.android.asynccall;
 
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
+
+import org.shenit.tutorial.android.R;
 
 import java.io.BufferedReader;
 import java.io.IOException;

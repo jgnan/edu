@@ -40,12 +40,15 @@ public class ArticlesDataProvider extends ContentProvider {
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
         switch(URI_MATCHER.match(uri)){
+            //content://org.shenit.tutorial.android/articles
             case URI_CODE_ALL_RECORDS:
                 return sqliteHelper.listArticles();
+            //content://org.shenit.tutorial.android/articles/1
             case URI_CODE_SINGLE_RECORD:
                 return sqliteHelper.findArticleById(uri.getLastPathSegment());
+            //content://org.shenit.tutorial.android/articles/lastest
             case URI_CODE_RECORD_SET:
-                //TODO antoher switch case segment for record set handling
+                //TODO another switch case segment for record set handling
                 return sqliteHelper.listArticles();
         }
         return null;
