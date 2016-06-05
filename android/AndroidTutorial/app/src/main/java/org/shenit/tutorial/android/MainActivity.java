@@ -11,6 +11,7 @@ import org.shenit.tutorial.android.fragment.FragmentExamplesActivity;
 import org.shenit.tutorial.android.list.ListExamplesActivity;
 import org.shenit.tutorial.android.menu.MenuExamplesActivity;
 import org.shenit.tutorial.android.pager.PagerExamplesActivity;
+import org.shenit.tutorial.android.recyclerview.RecyclerViewExamplesActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -31,5 +32,6 @@ public class MainActivity extends AppCompatActivity {
         Utils.bind(this, R.id.data_provider_examples_link, DataProviderExamplesActivity.class);
         Utils.bind(this, R.id.pager_examples_link, PagerExamplesActivity.class);
         Utils.bind(this, R.id.return_result_example_link, ReturnResultActivity.class);
+        Utils.bind(this, R.id.recycler_view_examples_link,RecyclerViewExamplesActivity.class);
     }
 }

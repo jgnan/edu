@@ -85,8 +85,13 @@
         <activity android:name=".menu.PopupMenuExampleActivity" />
         <activity android:name=".list.PullToRefreshExampleActivity" />
         <activity android:name=".pager.PagerExamplesActivity" />
-        <activity android:name=".pager.ViewPagerExampleActivity" android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".FetchResultActivity"></activity>
+        <activity
+            android:name=".pager.ViewPagerExampleActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".FetchResultActivity" />
+        <activity android:name=".recyclerview.RecyclerViewExamplesActivity" />
+        <activity android:name=".recyclerview.RecyclerViewLinearLayoutExampleActivity" />
+        <activity android:name=".recyclerview.RecyclerViewGridLayoutExample"></activity>
     </application>
 
 </manifest>
