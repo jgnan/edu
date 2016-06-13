@@ -3,10 +3,8 @@ package org.shenit.tutorial.android.drawable;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -63,9 +61,7 @@ public class RemoteDrawableListExampleActivity extends Activity {
             ImageView cover= (ImageView) convertView.findViewById(R.id.cover);
             TextView title= (TextView) convertView.findViewById(R.id.title);
             Movie item = getItem(position);
-            cover.setImageDrawable(new AsyncDrawable(getResources(),
-                    ((BitmapDrawable) cover.getDrawable()).getBitmap(),
-                    new RemoteDrawableTask(cover)));
+            new RemoteDrawableTask(cover).execute(item.cover);
             title.setText(item.title);
 
             convertView.setTag(item);
@@ -74,24 +70,7 @@ public class RemoteDrawableListExampleActivity extends Activity {
     }
 
 
-    public class AsyncDrawable extends BitmapDrawable {
-        private final WeakReference<RemoteDrawableTask> bitmapWorkerTaskReference;
-
-        public AsyncDrawable(Resources res, Bitmap bitmap,
-                             RemoteDrawableTask bitmapWorkerTask) {
-            super(res, bitmap);
-            bitmapWorkerTaskReference =
-                    new WeakReference<RemoteDrawableTask>(bitmapWorkerTask);
-            bitmapWorkerTask.execute();
-        }
-
-        public RemoteDrawableTask getBitmapWorkerTask() {
-            return bitmapWorkerTaskReference.get();
-        }
-    }
-
-
-    class RemoteDrawableTask extends AsyncTask<Void, Void, Bitmap> {
+    class RemoteDrawableTask extends AsyncTask<String, Void, Bitmap> {
         private final WeakReference<ImageView> imageViewReference;
 
         RemoteDrawableTask(ImageView imageView) {
@@ -99,9 +78,9 @@ public class RemoteDrawableListExampleActivity extends Activity {
         }
 
         @Override
-        protected Bitmap doInBackground(Void... params) {
+        protected Bitmap doInBackground(String... params) {
             try {
-                URL url = new URL("http://2fun2fun.com/wp-content/uploads/2014/05/5.6-52.jpg");
+                URL url = new URL(params[0]);
                 InputStream is = url.openStream();
                 return  BitmapFactory.decodeStream(is);
             } catch (MalformedURLException e) {
