@@ -4,17 +4,13 @@ import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.content.UriMatcher;
 import android.database.Cursor;
-import android.database.MatrixCursor;
 import android.net.Uri;
 import android.support.annotation.Nullable;
 
 import org.shenit.tutorial.android.dataproc.ArticleSQLiteOpenHelper;
-import org.shenit.tutorial.android.entities.Article;
-
-import java.util.List;
 
 /**
- * Created by jiangnan on 5/30/16.
+ * Created by 江老师 on 5/30/16.
  */
 public class ArticlesDataProvider extends ContentProvider {
     private static final UriMatcher URI_MATCHER = new UriMatcher(UriMatcher.NO_MATCH);

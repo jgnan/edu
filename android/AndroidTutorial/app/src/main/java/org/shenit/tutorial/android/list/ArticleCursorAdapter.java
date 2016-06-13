@@ -10,7 +10,7 @@ import org.shenit.tutorial.android.R;
 import org.shenit.tutorial.android.entities.Article;
 
 /**
- * Created by jiangnan on 6/2/16.
+ * Created by 江老师 on 6/2/16.
  */
 public class ArticleCursorAdapter extends SimpleCursorAdapter {
     //If you want to use cursor adapter, you must contain a "_id" field, or the class will not work!

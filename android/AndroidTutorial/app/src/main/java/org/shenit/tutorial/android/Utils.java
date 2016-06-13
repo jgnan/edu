@@ -20,7 +20,7 @@ import java.net.URL;
 import java.net.URLConnection;
 
 /**
- * Created by jiangnan on 5/25/16.
+ * Created by 江老师 on 5/25/16.
  */
 public final class Utils {
     private static final Gson GSON;

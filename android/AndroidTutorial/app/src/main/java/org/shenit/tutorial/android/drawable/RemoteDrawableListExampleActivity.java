@@ -17,6 +17,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import org.shenit.tutorial.android.R;
+import org.shenit.tutorial.android.entities.Movie;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -46,15 +47,6 @@ public class RemoteDrawableListExampleActivity extends Activity {
         list.setAdapter(new MovieAdapter(this,0,movies));
     }
 
-    private class Movie {
-        String cover;
-        String title;
-
-        public Movie(String title, String cover) {
-            this.title = title;
-            this.cover = cover;
-        }
-    }
 
     private class MovieAdapter extends ArrayAdapter<Movie>{
 

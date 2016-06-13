@@ -11,10 +11,9 @@ import org.shenit.tutorial.android.R;
 import org.shenit.tutorial.android.entities.Article;
 
 import java.util.List;
-import java.util.Map;
 
 /**
- * Created by jiangnan on 6/2/16.
+ * Created by 江老师 on 6/2/16.
  */
 public class ArticleListAdapter extends ArrayAdapter<Article> {
     private LayoutInflater mInflater;

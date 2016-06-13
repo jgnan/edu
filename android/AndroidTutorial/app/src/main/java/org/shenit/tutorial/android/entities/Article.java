@@ -4,7 +4,7 @@ import com.orm.SugarRecord;
 import com.orm.dsl.Table;
 
 /**
- * Created by jiangnan on 5/30/16.
+ * Created by 江老师 on 5/30/16.
  */
 @Table(name="articles")
 public class Article extends SugarRecord{

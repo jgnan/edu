@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by jiangnan on 6/5/16.
+ * Created by 江老师 on 6/5/16.
  */
 public class ComplexRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     public static final int TYPE_ARTICLE = 1;
