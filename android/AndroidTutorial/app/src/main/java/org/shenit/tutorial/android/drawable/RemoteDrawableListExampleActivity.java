@@ -20,7 +20,6 @@ import org.shenit.tutorial.android.entities.Movie;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -83,8 +82,6 @@ public class RemoteDrawableListExampleActivity extends Activity {
                 URL url = new URL(params[0]);
                 InputStream is = url.openStream();
                 return  BitmapFactory.decodeStream(is);
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }
