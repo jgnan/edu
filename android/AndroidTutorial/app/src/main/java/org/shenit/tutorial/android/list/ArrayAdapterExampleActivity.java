@@ -12,7 +12,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import org.shenit.tutorial.android.R;
-import org.shenit.tutorial.android.entities.Book;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -38,9 +37,11 @@ public class ArrayAdapterExampleActivity extends Activity {
 
         list.setAdapter(new BookAdapter(this,0,books));
 
+        //设置鼠标点击单条记录时的处理事件
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //跳转页面代码
                 Intent intent = new Intent(ArrayAdapterExampleActivity.this,BookDetailActivity.class);
                 Bundle bundle = new Bundle();
                 Book book = (Book) view.getTag();
@@ -54,6 +55,19 @@ public class ArrayAdapterExampleActivity extends Activity {
         });
     }
 
+    private class Book{
+        String title;
+        String author;
+        String content;
+        java.util.Date publishDate;
+
+        public Book(String title, String author, Date publishDate,String content) {
+            this.title = title;
+            this.author = author;
+            this.publishDate = publishDate;
+            this.content = content;
+        }
+    }
 
     private class BookAdapter extends ArrayAdapter<Book>{
 

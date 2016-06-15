@@ -6,13 +6,18 @@ import android.widget.TextView;
 
 import org.shenit.tutorial.android.R;
 
+/**
+ * 演示界面跳转示例
+ */
 public class BookDetailActivity extends AppCompatActivity {
     TextView contentView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_detail);
+        //获取搜索条件里的参数
         Bundle bundle = getIntent().getExtras();
+
         String title = bundle.getString("title");
         String author = bundle.getString("author");
         String content = bundle.getString("content");
