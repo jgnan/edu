@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import org.shenit.tutorial.android.R;
+import org.shenit.tutorial.android.entities.Book;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -53,19 +54,6 @@ public class ArrayAdapterExampleActivity extends Activity {
         });
     }
 
-    private class Book{
-        String title;
-        String author;
-        String content;
-        java.util.Date publishDate;
-
-        public Book(String title, String author, Date publishDate,String content) {
-            this.title = title;
-            this.author = author;
-            this.publishDate = publishDate;
-            this.content = content;
-        }
-    }
 
     private class BookAdapter extends ArrayAdapter<Book>{
 

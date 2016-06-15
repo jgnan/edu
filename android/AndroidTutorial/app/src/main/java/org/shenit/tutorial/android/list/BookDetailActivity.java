@@ -1,20 +1,12 @@
 package org.shenit.tutorial.android.list;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import org.shenit.tutorial.android.R;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.URL;
-
 public class BookDetailActivity extends AppCompatActivity {
-    private Handler handler = new Handler();
     TextView contentView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,27 +24,5 @@ public class BookDetailActivity extends AppCompatActivity {
         titleTextView.setText(title);
         authorView.setText(author);
         contentView.setText(content);
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                StringBuffer buff = new StringBuffer();
-                try {
-                    URL url = new URL("http://www.baidu.com");
-                    InputStream is = url.openStream();
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-                    String line;
-                    while ((line = reader.readLine()) != null) buff.append(line);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                final String resp = buff.toString();
-                handler.post(new Runnable(){
-                    @Override
-                    public void run() {
-                        contentView.setText(resp);
-                    }
-                });
-            }
-        }).start();
     }
 }
