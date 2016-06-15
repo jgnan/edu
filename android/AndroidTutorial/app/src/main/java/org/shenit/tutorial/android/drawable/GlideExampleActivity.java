@@ -74,7 +74,6 @@ public class GlideExampleActivity extends Activity {
                     .load(item.cover)
                     .placeholder(R.mipmap.small)        //设置还没加载完成前显示的图片
                     .error(R.mipmap.small)              //当图片加载失败时显示的图片
-//                    .diskCacheStrategy(DiskCacheStrategy.SOURCE)
                     .into(cover);
             title.setText(item.title);
 

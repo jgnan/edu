@@ -11,7 +11,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 public class BookDetailActivity extends AppCompatActivity {
@@ -42,14 +41,17 @@ public class BookDetailActivity extends AppCompatActivity {
                     InputStream is = url.openStream();
                     BufferedReader reader = new BufferedReader(new InputStreamReader(is));
                     String line;
-                    while ((line = reader.readLine()) != null) buff.append(reader.readLine());
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
+                    while ((line = reader.readLine()) != null) buff.append(line);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
                 final String resp = buff.toString();
-                contentView.setText(resp);
+                handler.post(new Runnable(){
+                    @Override
+                    public void run() {
+                        contentView.setText(resp);
+                    }
+                });
             }
         }).start();
     }
