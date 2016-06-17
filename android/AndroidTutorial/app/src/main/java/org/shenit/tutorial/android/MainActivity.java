@@ -12,6 +12,7 @@ import org.shenit.tutorial.android.list.ListExamplesActivity;
 import org.shenit.tutorial.android.menu.MenuExamplesActivity;
 import org.shenit.tutorial.android.pager.PagerExamplesActivity;
 import org.shenit.tutorial.android.recyclerview.RecyclerViewExamplesActivity;
+import org.shenit.tutorial.android.serialization.SerializationExamplesActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         Utils.bind(this, R.id.drawable_examples_link, DrawableMainActivity.class);
         Utils.bind(this, R.id.async_call_examples_link, AsyncCallExamplesActivity.class);
         Utils.bind(this, R.id.act_life_cycle_example_link, ActivityLifeCycleExampleActivity.class);
+        Utils.bind(this, R.id.serialization_examples_link,SerializationExamplesActivity.class);
         Utils.bind(this, R.id.data_process_examples_link, DataProcessExamplesActivity.class);
         Utils.bind(this, R.id.menu_examples_link, MenuExamplesActivity.class);
         Utils.bind(this, R.id.data_provider_examples_link, DataProviderExamplesActivity.class);

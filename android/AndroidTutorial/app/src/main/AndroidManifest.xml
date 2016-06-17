@@ -38,6 +38,7 @@
             android:label="@string/title_activity_main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -90,7 +91,12 @@
         <activity android:name=".FetchResultActivity" />
         <activity android:name=".recyclerview.RecyclerViewExamplesActivity" />
         <activity android:name=".recyclerview.RecyclerViewLinearLayoutExampleActivity" />
-        <activity android:name=".recyclerview.RecyclerViewGridLayoutExample"></activity>
+        <activity android:name=".recyclerview.RecyclerViewGridLayoutExample" />
+        <activity android:name=".serialization.SerializationExamplesActivity"/>
+        <activity android:name=".serialization.SerializableFromActivity"/>
+        <activity android:name=".serialization.SerializableToActivity"/>
+        <activity android:name=".serialization.ParcelableFromActivity"/>
+        <activity android:name=".serialization.ParcelableToActivity"/>
     </application>
 
 </manifest>

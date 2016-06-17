@@ -59,6 +59,12 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Serialization Examples"
+            android:id="@+id/serialization_examples_link"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Data Process Examples"
             android:id="@+id/data_process_examples_link"
             />
