@@ -27,6 +27,9 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 
+/**
+ * 外部存储示例代码.
+ */
 public class ExternalStorageExampleActivity extends AppCompatActivity {
     private EditText titleText;
     private EditText contentText;
@@ -79,13 +82,14 @@ public class ExternalStorageExampleActivity extends AppCompatActivity {
     }
 
     /*
-     * Load data from file
+     * 加载外部文件数据
      */
     private void loadFromFile() {
         if(!Utils.isExternalStorageReadable()){
             Toast.makeText(this, "No external storage avaialble", Toast.LENGTH_SHORT).show();
             return;
         }
+        //读取外部的CONTEXT文件夹
         File file = new File(getExternalFilesDir(null),fileName);
         BufferedReader reader = null;
         try {
@@ -97,17 +101,13 @@ public class ExternalStorageExampleActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }finally{
-            if(reader != null) try {
-                reader.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            IOUtils.closeQuietly(reader);
         }
         Toast.makeText(this,"Load data from file -> "+file.toString(),Toast.LENGTH_SHORT).show();
     }
 
     /*
-     * Save data to file
+     * 保存输入数据到外部文件
      */
     private void saveToFile() {
         if(!Utils.isExternalStorageWritable()){
@@ -123,11 +123,8 @@ public class ExternalStorageExampleActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }finally{
-            if(writer != null) try {
-                writer.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            IOUtils.closeQuietly(writer);
+
         }
         Toast.makeText(this,"Save data to file -> "+file.toString(),Toast.LENGTH_SHORT).show();
     }

@@ -1,5 +1,6 @@
 package org.shenit.tutorial.android.entities;
 
+import com.google.gson.annotations.Expose;
 import com.orm.SugarRecord;
 import com.orm.dsl.Table;
 
@@ -8,12 +9,15 @@ import com.orm.dsl.Table;
  */
 @Table(name="articles")
 public class Article extends SugarRecord{
-    public String title;
-    public String author;
-    public String content;
+    @Expose public String title;
+    @Expose public String author;
+    @Expose public String content;
 
     public Article(){}
     public Article(String title, String content){
+        this(title,null,content);
+    }
+    public Article(String title, String author,String content){
         this.title = title;
         this.author = author;
         this.content = content;
