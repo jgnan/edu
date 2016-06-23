@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.shenit.tutorial.android.Application;
 import org.shenit.tutorial.android.R;
 import org.shenit.tutorial.android.entities.Article;
 
@@ -19,7 +20,6 @@ public class SQLiteStorageExampleActivity extends AppCompatActivity {
     private EditText titleText;
     private EditText authorText;
     private EditText contentText;
-    private ArticleSQLiteOpenHelper sqlHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +51,6 @@ public class SQLiteStorageExampleActivity extends AppCompatActivity {
                 doDelete();
             }
         });
-        sqlHelper = new ArticleSQLiteOpenHelper(this);
     }
 
     private void doDelete() {
@@ -60,7 +59,7 @@ public class SQLiteStorageExampleActivity extends AppCompatActivity {
             Toast.makeText(this,"Could not delete record without id!!", Toast.LENGTH_SHORT).show();
             return;
         }
-        SQLiteDatabase db = sqlHelper.getWritableDatabase();
+        SQLiteDatabase db = Application.articleSqlHelper.getWritableDatabase();
         db.delete("articles","id = ?",new String[]{idStr});
         setData(null);
         Toast.makeText(this,"Delete record["+idStr+"] success!",Toast.LENGTH_SHORT).show();
@@ -72,7 +71,7 @@ public class SQLiteStorageExampleActivity extends AppCompatActivity {
             Toast.makeText(this,"No id to load!",Toast.LENGTH_SHORT).show();
             return;
         }
-        Cursor cursor = sqlHelper.getReadableDatabase().query("articles",
+        Cursor cursor = Application.articleSqlHelper.getReadableDatabase().query("articles",
                 new String[]{"ID", "TITLE", "AUTHOR", "CONTENT"},    //columns
                 "ID = ?", new String[]{idStr},
                 null, null, null, null);
@@ -104,19 +103,24 @@ public class SQLiteStorageExampleActivity extends AppCompatActivity {
     }
 
     private void doSave() {
-        SQLiteDatabase db = sqlHelper.getWritableDatabase();
+        //获取数据库访问实例
+        SQLiteDatabase db = Application.articleSqlHelper.getWritableDatabase();
+        //获取ID字段的值
         String idStr = idText.getText().toString();
         Integer id = null;
         if(!TextUtils.isEmpty(idStr) && TextUtils.isDigitsOnly(idStr)) id = Integer.parseInt(idStr);
+
+        //插入数据库的数据封装
         ContentValues record = new ContentValues();
         record.put("title",titleText.getText().toString());
         record.put("author", authorText.getText().toString());
         record.put("content", contentText.getText().toString());
         if(id == null){
-            //execute an insert sql
+            //缺少ID时，插入记录
             long newId = db.insert("articles", null, record);
             idText.setText(String.valueOf(newId));
         } else {
+            //带有ID时，更新该ID对应的记录
             db.update("articles", record, " id = ? ", new String[]{id.toString()});
         }
         Toast.makeText(this,"Save to database success!",Toast.LENGTH_SHORT).show();

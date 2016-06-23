@@ -55,8 +55,9 @@ public class SugarOrmExampleActivity extends AppCompatActivity {
             Toast.makeText(this,"Could not delete record without id!!", Toast.LENGTH_SHORT).show();
             return;
         }
+        //通过ID查找单条记录
         Article art = Article.findById(Article.class, Long.parseLong(idStr));
-        art.delete();
+        if(art != null) art.delete();   //通过这条记录实例删除记录
         setData(null);
         Toast.makeText(this,"Delete record["+idStr+"] success!",Toast.LENGTH_SHORT).show();
     }
@@ -67,6 +68,7 @@ public class SugarOrmExampleActivity extends AppCompatActivity {
             Toast.makeText(this,"No id to load!",Toast.LENGTH_SHORT).show();
             return;
         }
+        //通过ID查找单条记录
         Article art = Article.findById(Article.class, Long.parseLong(idStr));
         setData(art);
 
@@ -95,7 +97,7 @@ public class SugarOrmExampleActivity extends AppCompatActivity {
         art.title = titleText.getText().toString();
         art.content = contentText.getText().toString();
         art.author = authorText.getText().toString();
-        art.save();
+        art.save(); //保存记录变化，这里Sugar会根据ID字段的值自动判断是新增记录还是更改记录
         idText.setText(String.valueOf(art.getId()));
         Toast.makeText(this,"Save to database success!",Toast.LENGTH_SHORT).show();
     }

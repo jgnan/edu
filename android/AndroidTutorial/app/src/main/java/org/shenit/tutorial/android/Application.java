@@ -5,10 +5,15 @@ import com.orm.SugarContext;
 import org.shenit.tutorial.android.dataproc.ArticleSQLiteOpenHelper;
 
 /**
- * Created by jiangnan on 5/30/16.
+ * 应用子类，利用这个类我们可以监听应用的生命周期并且定义一些应用级别的单例
  */
 public class Application extends android.app.Application{
+    //定义一个单例引用
     public static ArticleSQLiteOpenHelper articleSqlHelper;
+
+    /**
+     * 这个方法在应用初始化的时候被调用
+     */
     @Override
     public void onCreate() {
         super.onCreate();

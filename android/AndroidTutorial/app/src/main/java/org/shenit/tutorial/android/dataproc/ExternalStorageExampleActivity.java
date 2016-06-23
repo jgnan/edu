@@ -153,8 +153,8 @@ public class ExternalStorageExampleActivity extends AppCompatActivity {
                 int read;
                 while ((read = is.read(buff)) > 0) {
                     fos.write(buff, 0, read);
-                    fos.flush();
                 }
+                fos.flush();
             } catch (IOException e) {
                 Log.e(Utils.class.getSimpleName(), "Error saving resources[" + urlStr + "] to file[" + file + "]", e);
             } finally {
