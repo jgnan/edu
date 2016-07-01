@@ -17,4 +17,6 @@ public class SimpleContactsCursorAdapter extends SimpleCursorAdapter{
     public SimpleContactsCursorAdapter(Context context, Cursor c) {
         super(context, R.layout.item_simple_contact, c, COLUMNS, IDS, 0);
     }
+
+
 }

@@ -12,6 +12,7 @@ import org.shenit.tutorial.android.list.ListExamplesActivity;
 import org.shenit.tutorial.android.menu.MenuExamplesActivity;
 import org.shenit.tutorial.android.pager.PagerExamplesActivity;
 import org.shenit.tutorial.android.recyclerview.RecyclerViewExamplesActivity;
+import org.shenit.tutorial.android.search.SearchExamplesActivity;
 import org.shenit.tutorial.android.serialization.SerializationExamplesActivity;
 
 
@@ -35,5 +36,6 @@ public class MainActivity extends AppCompatActivity {
         Utils.bind(this, R.id.pager_examples_link, PagerExamplesActivity.class);
         Utils.bind(this, R.id.return_result_example_link, ReturnResultActivity.class);
         Utils.bind(this, R.id.recycler_view_examples_link,RecyclerViewExamplesActivity.class);
+        Utils.bind(this,R.id.search_examples_link, SearchExamplesActivity.class);
     }
 }

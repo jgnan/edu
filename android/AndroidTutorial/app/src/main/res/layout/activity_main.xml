@@ -92,5 +92,11 @@
             android:text="Return Result Examples"
             android:id="@+id/return_result_example_link"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Search Examples"
+            android:id="@+id/search_examples_link"
+            />
     </LinearLayout>
 </ScrollView>

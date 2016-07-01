@@ -1,11 +1,10 @@
 package org.shenit.tutorial.android.pager;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 
 import org.shenit.tutorial.android.R;
@@ -31,7 +30,7 @@ public class ViewPagerExampleActivity extends AppCompatActivity {
 
             @Override
             public int getCount() {
-                return 30;
+                return 5;
             }
         });
     }

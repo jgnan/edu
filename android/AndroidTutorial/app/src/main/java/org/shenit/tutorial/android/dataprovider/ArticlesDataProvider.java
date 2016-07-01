@@ -42,7 +42,7 @@ public class ArticlesDataProvider extends ContentProvider {
             //content://org.shenit.tutorial.android/articles/1
             case URI_CODE_SINGLE_RECORD:
                 return sqliteHelper.findArticleById(uri.getLastPathSegment());
-            //content://org.shenit.tutorial.android/articles/lastest
+            //content://org.shenit.tutorial.android/articles/latest
             case URI_CODE_RECORD_SET:
                 //TODO another switch case segment for record set handling
                 return sqliteHelper.listArticles();

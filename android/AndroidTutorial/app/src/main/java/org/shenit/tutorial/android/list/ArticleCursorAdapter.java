@@ -4,22 +4,17 @@ import android.content.Context;
 import android.database.Cursor;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.View;
-import android.view.ViewGroup;
 
 import org.shenit.tutorial.android.R;
 import org.shenit.tutorial.android.entities.Article;
 
 /**
- * Created by 江老师 on 6/2/16.
+ * CursorAdapter的示例代码.
  */
 public class ArticleCursorAdapter extends SimpleCursorAdapter {
     //If you want to use cursor adapter, you must contain a "_id" field, or the class will not work!
     public static final String[] ARTICLES_TABLE_LIST_COLUMNS = new String[]{"TITLE","AUTHOR"};
     private static final int[] ARTICLE_VIEW_IDS = new int[]{R.id.title,R.id.author};
-    @Override
-    public int getCount() {
-        return super.getCount();
-    }
 
     public ArticleCursorAdapter(Context context,  Cursor c) {
         super(context, R.layout.item_article, c, ARTICLES_TABLE_LIST_COLUMNS,ARTICLE_VIEW_IDS, 0);
@@ -37,13 +32,5 @@ public class ArticleCursorAdapter extends SimpleCursorAdapter {
         art.author= cursor.getString(cursor.getColumnIndex("AUTHOR"));
 
         view.setTag(art);
-    }
-
-    /*
-     * Override this method to implement your view loading logic
-     */
-    @Override
-    public View newView(Context context, Cursor cursor, ViewGroup parent) {
-        return super.newView(context, cursor, parent);
     }
 }

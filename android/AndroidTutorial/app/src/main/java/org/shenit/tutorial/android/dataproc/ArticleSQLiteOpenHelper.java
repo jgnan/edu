@@ -1,5 +1,6 @@
 package org.shenit.tutorial.android.dataproc;
 
+import android.app.SearchManager;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -86,5 +87,18 @@ public class ArticleSQLiteOpenHelper extends SQLiteOpenHelper {
         return getReadableDatabase()
                 .rawQuery("select ID as _id, title, author,content from articles where id = ?",
                         new String[]{id});
+    }
+
+    /**
+     * 搜索文章
+     * @param query
+     * @return
+     */
+    public Cursor searchArticles(String query) {
+        return getReadableDatabase()
+                .rawQuery("select ID as _id, title as "+ SearchManager.SUGGEST_COLUMN_TEXT_1 +
+                        ", author as "+SearchManager.SUGGEST_COLUMN_TEXT_2 +
+                        ", ID AS "+SearchManager.SUGGEST_COLUMN_INTENT_DATA_ID +
+                        " from articles where title like ? or author like ? order by ID DESC",new String[]{query+"%",query+"%"});
     }
 }

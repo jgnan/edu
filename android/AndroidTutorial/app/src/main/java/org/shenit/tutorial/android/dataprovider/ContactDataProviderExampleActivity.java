@@ -1,9 +1,10 @@
 package org.shenit.tutorial.android.dataprovider;
 
+import android.content.ContentResolver;
 import android.database.Cursor;
+import android.os.Bundle;
 import android.provider.ContactsContract.Contacts;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.ListView;
 
 import org.shenit.tutorial.android.R;
@@ -20,7 +21,8 @@ public class ContactDataProviderExampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view);
         list = (ListView) findViewById(R.id.list_view);
-        Cursor cursor = getContentResolver().query(Contacts.CONTENT_URI,PROJECTIONS,null,null,null);
+        ContentResolver resolver = getContentResolver();
+        Cursor cursor = resolver.query(Contacts.CONTENT_URI,PROJECTIONS,null,null,null);
         list.setAdapter(new SimpleContactsCursorAdapter(this,cursor));
     }
 }
