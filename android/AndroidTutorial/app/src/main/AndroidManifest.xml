@@ -43,7 +43,10 @@
             android:authorities="org.shenit.tutorial.android.search.RecentSearchContentProvider"/>
         <provider
             android:name=".search.ArticleSearchSuggestionsProvider"
-            android:authorities="org.shenit.tutorial.android.search.ArticleSearchSuggestionsProvider"/>
+            android:authorities="org.shenit.tutorial.android.search.ArticleSearchSuggestionsProvider">
+            <!-- For Quick search box!! -->
+            <path-permission android:pathPrefix="/search_suggest_query" android:readPermission="android.permission.GLOBAL_SEARCH" />
+        </provider>
 
 
         <activity android:name=".list.ArrayAdapterExampleActivity" />

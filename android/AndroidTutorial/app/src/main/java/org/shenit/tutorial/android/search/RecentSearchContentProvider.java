@@ -6,7 +6,7 @@ import android.content.SearchRecentSuggestionsProvider;
  * 近期搜索建议项的ContentProvider.
  */
 public class RecentSearchContentProvider extends SearchRecentSuggestionsProvider{
-    public final static String AUTHORITY = "org.shenit.tutorial.android.search.RecentSearchProvider";
+    public final static String AUTHORITY = "org.shenit.tutorial.android.search.RecentSearchContentProvider";
     public final static int MODE = DATABASE_MODE_QUERIES;
 
     public RecentSearchContentProvider() {

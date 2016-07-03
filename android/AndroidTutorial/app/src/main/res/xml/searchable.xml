@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <!-- Using RecentSearchSuggestionsProvider -->
-<!--<searchable xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--android:label="@string/app_name"-->
-    <!--android:hint="@string/article_search_hint"-->
-    <!--android:searchSuggestAuthority="org.shenit.tutorial.android.search.RecentSearchContentProvider"-->
-    <!--android:searchSuggestSelection=" ?"/>-->
+<!-- Using RecentSearchSuggestionsProvider -->
+<!--searchable xmlns:android="http://schemas.android.com/apk/res/android"
+    android:label="@string/app_name"
+    android:hint="@string/article_search_hint"
+    android:searchSuggestAuthority="org.shenit.tutorial.android.search.RecentSearchContentProvider"
+    android:searchSuggestSelection=" ?"/ -->
 
 <!-- Using Customize Content Provider-->
 <searchable xmlns:android="http://schemas.android.com/apk/res/android"
@@ -12,5 +12,6 @@
     android:hint="@string/article_search_hint"
     android:searchSuggestAuthority="org.shenit.tutorial.android.search.ArticleSearchSuggestionsProvider"
     android:searchSuggestIntentAction="android.intent.action.VIEW"
+    android:includeInGlobalSearch="true"
     android:searchSuggestIntentData="content://org.shenit.tutorial.android.search.ArticleSearchSuggestionsProvider/articles/search"
     />
