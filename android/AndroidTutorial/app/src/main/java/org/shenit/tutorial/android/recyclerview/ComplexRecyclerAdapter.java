@@ -27,6 +27,10 @@ public class ComplexRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         if(data != null) this.data = data;
     }
 
+    public void addAll(List<Map<String,String>> data){
+        this.data.addAll(data);
+    }
+
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
@@ -34,7 +38,7 @@ public class ComplexRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vi
             case TYPE_CONTACT:
                 return new ContactViewHolder(inflater.inflate(R.layout.item_simple_contact,null,false));
             default:
-                return new ArticleViewHolder(inflater.inflate(R.layout.item_article,null,false));
+                return new ArticleViewHolder(inflater.inflate(R.layout.item_simple_thumbnail,null,false));
         }
     }
 
@@ -51,8 +55,7 @@ public class ComplexRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vi
      */
     @Override
     public int getItemViewType(int position) {
-        Map<String,String> row = data.get(position);
-        return row.containsKey("thumbnail") ? TYPE_CONTACT : TYPE_ARTICLE;
+        return position % 3 == 0 ? TYPE_CONTACT : TYPE_ARTICLE;
     }
 
     @Override
@@ -64,12 +67,15 @@ public class ComplexRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vi
                 Glide.with(holder.itemView.getContext())
                         .load(row.get("thumbnail"))
                         .into(contactHolder.thumbnailImage);
-                contactHolder.displayNameText.setText(row.get("displayName"));
+                contactHolder.displayNameText.setText(row.get("title"));
                 break;
             default:
                 ArticleViewHolder articleHolder = (ArticleViewHolder) holder;
+                Glide.with(holder.itemView.getContext())
+                        .load(row.get("thumbnail"))
+                        .centerCrop()
+                        .into(articleHolder.thumbnailImage);
                 articleHolder.titleText.setText(row.get("title"));
-                articleHolder.authorText.setText(row.get("author"));
 
         }
     }
@@ -85,12 +91,12 @@ public class ComplexRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vi
     }
 
     static class ArticleViewHolder extends RecyclerView.ViewHolder{
+        private ImageView thumbnailImage;
         private TextView titleText;
-        private TextView authorText;
-        public ArticleViewHolder(View itemView){
+        public ArticleViewHolder(View itemView) {
             super(itemView);
+            thumbnailImage = (ImageView) itemView.findViewById(R.id.thumbnail);
             titleText = (TextView) itemView.findViewById(R.id.title);
-            authorText = (TextView) itemView.findViewById(R.id.author);
         }
     }
 

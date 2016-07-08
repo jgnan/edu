@@ -31,6 +31,12 @@
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="org.shenit.tutorial.android.entities" />
 
+        <!-- Services -->
+        <service android:name=".services.SimpleServiceExample" />
+        <service android:name=".services.SimpleBindServiceExample" />
+        <service android:name=".services.IntentServiceExample" />
+
+        <!-- Providers -->
         <provider
             android:name=".dataprovider.ArticlesDataProvider"
             android:authorities="org.shenit.tutorial.android">
@@ -40,14 +46,16 @@
         </provider>
         <provider
             android:name=".search.RecentSearchContentProvider"
-            android:authorities="org.shenit.tutorial.android.search.RecentSearchContentProvider"/>
+            android:authorities="org.shenit.tutorial.android.search.RecentSearchContentProvider" />
         <provider
             android:name=".search.ArticleSearchSuggestionsProvider"
             android:authorities="org.shenit.tutorial.android.search.ArticleSearchSuggestionsProvider">
-            <!-- For Quick search box!! -->
-            <path-permission android:pathPrefix="/search_suggest_query" android:readPermission="android.permission.GLOBAL_SEARCH" />
-        </provider>
 
+            <!-- For Quick search box!! -->
+            <path-permission
+                android:pathPrefix="/search_suggest_query"
+                android:readPermission="android.permission.GLOBAL_SEARCH" />
+        </provider>
 
         <activity android:name=".list.ArrayAdapterExampleActivity" />
         <activity android:name=".list.BookDetailActivity" />
@@ -105,6 +113,7 @@
         <activity android:name=".recyclerview.RecyclerViewExamplesActivity" />
         <activity android:name=".recyclerview.RecyclerViewLinearLayoutExampleActivity" />
         <activity android:name=".recyclerview.RecyclerViewGridLayoutExample" />
+        <activity android:name=".recyclerview.RecyclerViewStaggeredGridLayoutExample" />
         <activity android:name=".serialization.SerializationExamplesActivity" />
         <activity android:name=".serialization.SerializableFromActivity" />
         <activity android:name=".serialization.SerializableToActivity" />
@@ -116,10 +125,13 @@
                 android:name="android.app.default_searchable"
                 android:value=".search.ArticleSearchActivity" />
         </activity>
-        <activity android:name=".search.ArticleSearchActivity" android:launchMode="singleTop">
+        <activity
+            android:name=".search.ArticleSearchActivity"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
@@ -129,6 +141,10 @@
                 android:name="android.app.default_searchable"
                 android:value=".search.ArticleSearchActivity" />
         </activity>
+        <activity android:name=".services.ServiceExamplesActivity" />
+        <activity android:name=".services.SimpleServiceExampleActivity" />
+        <activity android:name=".services.SimpleBindServiceExampleActivity" />
+        <activity android:name=".services.IntentServiceExampleActivity"/>
     </application>
 
 </manifest>
