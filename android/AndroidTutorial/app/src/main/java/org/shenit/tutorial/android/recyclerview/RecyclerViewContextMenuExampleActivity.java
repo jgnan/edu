@@ -1,9 +1,11 @@
 package org.shenit.tutorial.android.recyclerview;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.ContextMenu;
+import android.view.View;
 
 import com.bumptech.glide.Glide;
 
@@ -14,10 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * This is a basic RecyclerView example with a Linear Layout. It could replace the ListView.
- */
-public class RecyclerViewLinearLayoutExampleActivity extends AppCompatActivity {
+public class RecyclerViewContextMenuExampleActivity extends AppCompatActivity {
     RecyclerView recycler;
 
     @Override
@@ -32,6 +31,13 @@ public class RecyclerViewLinearLayoutExampleActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         recycler.setAdapter(new ComplexRecyclerAdapter(initData()));    //set a RecyclerView.Adapter
+        registerForContextMenu(recycler);
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        getMenuInflater().inflate(R.menu.menu_example, menu);
+        super.onCreateContextMenu(menu, v, menuInfo);
     }
 
     private List<Map<String, String>> initData() {

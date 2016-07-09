@@ -1,6 +1,7 @@
 package org.shenit.tutorial.android.recyclerview;
 
 import android.support.v7.widget.RecyclerView;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -80,23 +81,33 @@ public class ComplexRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         }
     }
 
-    static class ContactViewHolder extends RecyclerView.ViewHolder{
+    static class ContactViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener{
         private ImageView thumbnailImage;
         private TextView displayNameText;
         public ContactViewHolder(View itemView) {
             super(itemView);
             thumbnailImage = (ImageView) itemView.findViewById(R.id.thumbnail);
             displayNameText = (TextView) itemView.findViewById(R.id.display_name);
+            itemView.setOnCreateContextMenuListener(this);
+        }
+
+        @Override
+        public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         }
     }
 
-    static class ArticleViewHolder extends RecyclerView.ViewHolder{
+    static class ArticleViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener{
         private ImageView thumbnailImage;
         private TextView titleText;
         public ArticleViewHolder(View itemView) {
             super(itemView);
             thumbnailImage = (ImageView) itemView.findViewById(R.id.thumbnail);
             titleText = (TextView) itemView.findViewById(R.id.title);
+            itemView.setOnCreateContextMenuListener(this);
+        }
+
+        @Override
+        public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         }
     }
 

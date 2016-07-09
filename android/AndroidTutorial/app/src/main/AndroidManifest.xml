@@ -144,7 +144,8 @@
         <activity android:name=".services.ServiceExamplesActivity" />
         <activity android:name=".services.SimpleServiceExampleActivity" />
         <activity android:name=".services.SimpleBindServiceExampleActivity" />
-        <activity android:name=".services.IntentServiceExampleActivity"/>
+        <activity android:name=".services.IntentServiceExampleActivity" />
+        <activity android:name=".recyclerview.RecyclerViewContextMenuExampleActivity"></activity>
     </application>
 
 </manifest>
