@@ -1,2 +1,2 @@
-include ':app', ':library'
+include ':app', ':library', ':anotherapp'
 project(':library').projectDir = new File('android-pull-to-refresh/library')

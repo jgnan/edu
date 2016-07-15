@@ -10,7 +10,8 @@
     <!-- 访问通信录数据的权限 -->
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
-
+    <!-- required permission for receiver -->
+    <permission android:name="org.shenit.tutorial.android.broadcast.BROADCAST"/>
     <application
         android:name=".Application"
         android:allowBackup="true"
@@ -35,6 +36,15 @@
         <service android:name=".services.SimpleServiceExample" />
         <service android:name=".services.SimpleBindServiceExample" />
         <service android:name=".services.IntentServiceExample" />
+
+        <!-- Receiver -->
+        <receiver
+            android:name=".broadcast.NotificationBroadcastReceiver"
+            android:permission="org.shenit.tutorial.android.broadcast.BROADCAST">
+            <intent-filter>
+                <action android:name="org.shenit.tutorial.android.broadcast.EXPORTED" />
+            </intent-filter>
+        </receiver>
 
         <!-- Providers -->
         <provider
@@ -145,7 +155,11 @@
         <activity android:name=".services.SimpleServiceExampleActivity" />
         <activity android:name=".services.SimpleBindServiceExampleActivity" />
         <activity android:name=".services.IntentServiceExampleActivity" />
-        <activity android:name=".recyclerview.RecyclerViewContextMenuExampleActivity"></activity>
+        <activity android:name=".recyclerview.RecyclerViewContextMenuExampleActivity" />
+        <activity android:name=".broadcast.BroadcastReceiverExamplesActivity" />
+        <activity android:name=".broadcast.SimpleBroadcastExampleActivity" />
+        <activity android:name=".broadcast.SimpleNotificationExampleActivity" />
+        <activity android:name=".broadcast.NotificationResultActivity"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,18 @@
+package org.shenit.tutorial.android.broadcast;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+import org.shenit.tutorial.android.R;
+import org.shenit.tutorial.android.Utils;
+
+public class BroadcastReceiverExamplesActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_broadcast_receiver_examples);
+        Utils.bind(this, R.id.simple_broadcast_example_button, SimpleBroadcastExampleActivity.class);
+        Utils.bind(this,R.id.simple_notification_example_button,SimpleNotificationExampleActivity.class);
+    }
+}

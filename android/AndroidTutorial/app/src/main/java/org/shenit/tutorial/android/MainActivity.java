@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import org.shenit.tutorial.android.asynccall.AsyncCallExamplesActivity;
+import org.shenit.tutorial.android.broadcast.BroadcastReceiverExamplesActivity;
 import org.shenit.tutorial.android.dataproc.DataProcessExamplesActivity;
 import org.shenit.tutorial.android.dataprovider.DataProviderExamplesActivity;
 import org.shenit.tutorial.android.drawable.DrawableMainActivity;
@@ -39,5 +40,6 @@ public class MainActivity extends AppCompatActivity {
         Utils.bind(this, R.id.recycler_view_examples_link,RecyclerViewExamplesActivity.class);
         Utils.bind(this,R.id.search_examples_link, SearchExamplesActivity.class);
         Utils.bind(this,R.id.service_examples_link, ServiceExamplesActivity.class);
+        Utils.bind(this,R.id.broadcast_receiver_examples_link, BroadcastReceiverExamplesActivity.class);
     }
 }

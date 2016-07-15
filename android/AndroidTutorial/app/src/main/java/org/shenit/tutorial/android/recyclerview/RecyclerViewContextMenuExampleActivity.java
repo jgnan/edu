@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.ContextMenu;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.bumptech.glide.Glide;
@@ -32,6 +33,11 @@ public class RecyclerViewContextMenuExampleActivity extends AppCompatActivity {
         super.onResume();
         recycler.setAdapter(new ComplexRecyclerAdapter(initData()));    //set a RecyclerView.Adapter
         registerForContextMenu(recycler);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        return super.onContextItemSelected(item);
     }
 
     @Override
