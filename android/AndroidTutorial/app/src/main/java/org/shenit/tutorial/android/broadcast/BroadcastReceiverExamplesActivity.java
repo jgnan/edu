@@ -13,6 +13,5 @@ public class BroadcastReceiverExamplesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_broadcast_receiver_examples);
         Utils.bind(this, R.id.simple_broadcast_example_button, SimpleBroadcastExampleActivity.class);
-        Utils.bind(this,R.id.simple_notification_example_button,SimpleNotificationExampleActivity.class);
     }
 }

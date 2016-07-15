@@ -11,6 +11,7 @@ import org.shenit.tutorial.android.drawable.DrawableMainActivity;
 import org.shenit.tutorial.android.fragment.FragmentExamplesActivity;
 import org.shenit.tutorial.android.list.ListExamplesActivity;
 import org.shenit.tutorial.android.menu.MenuExamplesActivity;
+import org.shenit.tutorial.android.notification.NotificationExamplesActivity;
 import org.shenit.tutorial.android.pager.PagerExamplesActivity;
 import org.shenit.tutorial.android.recyclerview.RecyclerViewExamplesActivity;
 import org.shenit.tutorial.android.search.SearchExamplesActivity;
@@ -41,5 +42,6 @@ public class MainActivity extends AppCompatActivity {
         Utils.bind(this,R.id.search_examples_link, SearchExamplesActivity.class);
         Utils.bind(this,R.id.service_examples_link, ServiceExamplesActivity.class);
         Utils.bind(this,R.id.broadcast_receiver_examples_link, BroadcastReceiverExamplesActivity.class);
+        Utils.bind(this,R.id.notification_examples_link, NotificationExamplesActivity.class);
     }
 }

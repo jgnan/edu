@@ -16,7 +16,6 @@ public class SimpleBroadcastExampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_broadcast_example);
         simpleReceiver = new SimpleBroadcastReceiver();
-
     }
 
     public void onRegisterReceiverClick(View v){

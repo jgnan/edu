@@ -12,7 +12,13 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Simple Broadcast Example"
-        android:id="@+id/simple_broadcast_example_button"
+        android:text="Simple Notification Example"
+        android:id="@+id/simple_notification_example_button"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Big Notification Example"
+        android:id="@+id/big_notification_example_button"
         />
 </LinearLayout>

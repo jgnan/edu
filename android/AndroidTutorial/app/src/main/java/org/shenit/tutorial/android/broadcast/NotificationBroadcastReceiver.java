@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 
 import org.shenit.tutorial.android.R;
+import org.shenit.tutorial.android.notification.NotificationResultActivity;
 
 /**
  * 供外部使用的广播接收类.
@@ -18,7 +19,9 @@ public class NotificationBroadcastReceiver extends BroadcastReceiver{
         //创建点击NOTIFICATION时跳转的活动
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
                 .setSmallIcon(R.mipmap.ic_launcher)
+                .setAutoCancel(true)        //set to true then notification will cancel itself once clicked
                 .setContentTitle("Android Tutorial Notification")
+                .setNumber(10)      //notification count
                 .setContentText("We receive data -> "+intent.getStringExtra("message"));
 
         Intent resultIntent = new Intent(context,NotificationResultActivity.class);

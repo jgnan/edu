@@ -1,4 +1,4 @@
-package org.shenit.tutorial.android.broadcast;
+package org.shenit.tutorial.android.notification;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
