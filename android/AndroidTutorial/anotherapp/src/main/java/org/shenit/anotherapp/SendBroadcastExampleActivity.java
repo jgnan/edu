@@ -19,7 +19,7 @@ public class SendBroadcastExampleActivity extends AppCompatActivity {
     public void onSendBroadcastClick(View v){
         Intent intent = new Intent(ACTION);
         intent.putExtra("message", messageText.getText().toString());
-        sendBroadcast(intent);
+        sendBroadcast(intent,"org.shenit.tutorial.android.broadcast.BROADCAST");
         Toast.makeText(this,"Send broadcast -> "+ ACTION,Toast.LENGTH_SHORT).show();
     }
 }

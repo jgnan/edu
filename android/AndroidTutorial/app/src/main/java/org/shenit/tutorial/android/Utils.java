@@ -1,7 +1,10 @@
 package org.shenit.tutorial.android;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
@@ -105,4 +108,13 @@ public final class Utils {
         return file;
     }
 
+    /**
+     * Get bitmap from a resource by its id
+     * @param ctx
+     * @param rid
+     * @return
+     */
+    public static Bitmap bitmap(Context ctx, int rid) {
+        return ((BitmapDrawable)ctx.getDrawable(rid)).getBitmap();
+    }
 }
