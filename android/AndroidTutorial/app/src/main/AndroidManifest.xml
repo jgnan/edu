@@ -163,7 +163,9 @@
         <activity android:name=".notification.SimpleNotificationExampleActivity" />
         <activity android:name=".notification.BigNotificationExampleActivity" />
         <activity android:name=".notification.NotificationResultActivity" />
-        <activity android:name=".notification.NotificationExamplesActivity"/>
+        <activity android:name=".notification.NotificationExamplesActivity" />
+        <activity android:name=".drawable.StateListDrawableExampleActivity" />
+        <activity android:name=".drawable.LevelDrawableExampleActivity"></activity>
     </application>
 
 </manifest>

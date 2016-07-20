@@ -47,4 +47,16 @@
         android:text="Glide Example (Multiple Image List)"
         android:id="@+id/glide_example_link"
         />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="State List Drawable Example"
+        android:id="@+id/state_list_drawable_example_link"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Level Drawable Example"
+        android:id="@+id/level_drawable_example_link"
+        />
 </LinearLayout>
