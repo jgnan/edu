@@ -21,6 +21,7 @@ public class SimpleBindServiceExampleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_bind_service_example);
+
         mTimestampText = (TextView) findViewById(R.id.timestamp_text);
     }
 

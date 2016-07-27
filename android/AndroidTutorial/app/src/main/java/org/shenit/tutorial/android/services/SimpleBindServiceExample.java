@@ -62,7 +62,6 @@ public class SimpleBindServiceExample extends Service{
     @Override
     public boolean onUnbind(Intent intent) {
         Toast.makeText(SimpleBindServiceExample.this, "onUnbind() called", Toast.LENGTH_SHORT).show();
-        mExecutor.shutdownNow();
         mBound = false;
         mTimestampText.setText("");
         mTimestampText = null;
@@ -76,6 +75,7 @@ public class SimpleBindServiceExample extends Service{
 
     @Override
     public void onDestroy() {
+        mExecutor.shutdownNow();
         Toast.makeText(SimpleBindServiceExample.this, "SimpleServiceExample.onDestroy() called", Toast.LENGTH_SHORT).show();
         super.onDestroy();
     }

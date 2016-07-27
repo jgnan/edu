@@ -44,4 +44,10 @@
             android:layout_height="wrap_content"
             android:onClick="onSetDisabled"/>
     </LinearLayout>
+    <Button
+        android:text="PRESS ME!"
+        android:textColor="@color/state_color_example"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/state_text_background"/>
 </LinearLayout>

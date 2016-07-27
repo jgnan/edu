@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import org.apache.commons.io.IOUtils;
 import org.shenit.tutorial.android.R;
-import org.shenit.tutorial.android.Utils;
+import org.shenit.tutorial.android.TutorialUtils;
 import org.shenit.tutorial.android.entities.Article;
 
 import java.io.BufferedReader;
@@ -73,7 +73,7 @@ public class InternalStorageExampleActivity extends AppCompatActivity {
             reader = new BufferedReader(new InputStreamReader(openFileInput(fileName)));
             String line = reader.readLine();
             //利用GSON把JSON格式数据反序列化为Article数据格式
-            Article art = Utils.gson().fromJson(line,Article.class);
+            Article art = TutorialUtils.gson().fromJson(line,Article.class);
             //使用数据
             titleText.setText(art.title);
             contentText.setText(art.content);
@@ -100,7 +100,7 @@ public class InternalStorageExampleActivity extends AppCompatActivity {
             //直接获取文件的Output
             writer = new OutputStreamWriter(openFileOutput(fileName, Context.MODE_PRIVATE));
             //利用GSON库把Article数据JSON化并且保存到目标文件中
-            writer.append(Utils.gson().toJson(art));
+            writer.append(TutorialUtils.gson().toJson(art));
             //从缓存写入到文件
             writer.flush();
         } catch (IOException e) {

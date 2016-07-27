@@ -1,0 +1,16 @@
+<resources>
+    <declare-styleable name="SimpleView">
+        <attr name="exampleString" format="string" />
+        <attr name="exampleDimension" format="dimension" />
+        <attr name="exampleColor" format="color" />
+        <attr name="exampleDrawable" format="color|reference" />
+        <attr name="exampleEnum">
+            <enum name="hello" value="1"/>
+            <enum name="hi" value="2"/>
+        </attr>
+        <attr name="exampleFlag">
+            <flag name="hello" value="0x0001"/>
+            <flag name="hi" value="0x0010"/>
+        </attr>
+    </declare-styleable>
+</resources>

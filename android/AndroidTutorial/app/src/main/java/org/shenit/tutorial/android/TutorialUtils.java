@@ -25,7 +25,7 @@ import java.net.URLConnection;
 /**
  * Created by 江老师 on 5/25/16.
  */
-public final class Utils {
+public final class TutorialUtils {
     private static final Gson GSON;
     static{
         GSON = new GsonBuilder()
@@ -100,7 +100,7 @@ public final class Utils {
                 fos.flush();
             }
         } catch (IOException e) {
-            Log.e(Utils.class.getSimpleName(),"Error saving resources["+urlStr+"] to file["+file+"]",e);
+            Log.e(TutorialUtils.class.getSimpleName(),"Error saving resources["+urlStr+"] to file["+file+"]",e);
         }finally{
             IOUtils.close(conn);
             IOUtils.closeQuietly(fos);

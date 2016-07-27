@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import org.shenit.tutorial.android.Utils;
+import org.shenit.tutorial.android.TutorialUtils;
 
 import org.shenit.tutorial.android.R;
 
@@ -27,7 +27,7 @@ public class BigNotificationExampleActivity extends AppCompatActivity {
         //创建点击NOTIFICATION时跳转的活动
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setLargeIcon(Utils.bitmap(this, R.mipmap.small))
+                .setLargeIcon(TutorialUtils.bitmap(this, R.mipmap.small))
                 .setAutoCancel(true)
                 .setContentTitle("Android Tutorial Notification")
                 .setContentText("Content Text")
@@ -35,8 +35,8 @@ public class BigNotificationExampleActivity extends AppCompatActivity {
                 .setStyle(new NotificationCompat.BigPictureStyle()
                         .setSummaryText("This is the summary")
                         .setBigContentTitle("Big content title")
-                        .bigLargeIcon(Utils.bitmap(this, R.mipmap.middle))
-                        .bigPicture(Utils.bitmap(this, R.mipmap.middle)));
+                        .bigLargeIcon(TutorialUtils.bitmap(this, R.mipmap.middle))
+                        .bigPicture(TutorialUtils.bitmap(this, R.mipmap.middle)));
 
         Intent resultIntent = new Intent(this,NotificationResultActivity.class);
         //set your data for the result activity here...

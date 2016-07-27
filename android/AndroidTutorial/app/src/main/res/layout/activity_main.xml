@@ -77,6 +77,11 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Customization Examples"
+            android:id="@+id/customization_examples_link"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Data Provider Examples"
             android:id="@+id/data_provider_examples_link"
             />
@@ -115,6 +120,12 @@
             android:layout_height="wrap_content"
             android:text="Notification Examples"
             android:id="@+id/notification_examples_link"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fix Screen Examples"
+            android:id="@+id/fix_multi_screen_examples_link"
             />
     </LinearLayout>
 </ScrollView>

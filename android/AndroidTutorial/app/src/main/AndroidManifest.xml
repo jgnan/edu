@@ -165,7 +165,13 @@
         <activity android:name=".notification.NotificationResultActivity" />
         <activity android:name=".notification.NotificationExamplesActivity" />
         <activity android:name=".drawable.StateListDrawableExampleActivity" />
-        <activity android:name=".drawable.LevelDrawableExampleActivity"></activity>
+        <activity android:name=".drawable.LevelDrawableExampleActivity" />
+        <activity android:name=".customization.CustomizationExamplesActivity" />
+        <activity android:name=".customization.SimpleCustomizeComponentExampleActivity" />
+        <activity android:name=".fixscreen.FixScreenExamplesActivity" />
+        <activity android:name=".fixscreen.FixMultiScreenExampleActivity" />
+        <activity android:name=".fixscreen.StylingExampleActivity" />
+        <activity android:name=".fixscreen.OrientationChangeExampleActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
     </application>
 
 </manifest>

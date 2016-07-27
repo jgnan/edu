@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import org.shenit.tutorial.android.R;
 
-import static org.shenit.tutorial.android.Utils.bind;
+import static org.shenit.tutorial.android.TutorialUtils.bind;
 
 public class DataProviderExamplesActivity extends AppCompatActivity {
 

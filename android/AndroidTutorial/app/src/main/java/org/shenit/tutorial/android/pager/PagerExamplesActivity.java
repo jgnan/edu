@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import org.shenit.tutorial.android.R;
-import org.shenit.tutorial.android.Utils;
+import org.shenit.tutorial.android.TutorialUtils;
 
 public class PagerExamplesActivity extends AppCompatActivity {
 
@@ -12,6 +12,6 @@ public class PagerExamplesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pager_examples);
-        Utils.bind(this, R.id.view_pager_example_link, ViewPagerExampleActivity.class);
+        TutorialUtils.bind(this, R.id.view_pager_example_link, ViewPagerExampleActivity.class);
     }
 }

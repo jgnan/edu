@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import org.apache.commons.io.IOUtils;
 import org.shenit.tutorial.android.R;
-import org.shenit.tutorial.android.Utils;
+import org.shenit.tutorial.android.TutorialUtils;
 import org.shenit.tutorial.android.entities.Article;
 
 import java.io.BufferedReader;
@@ -85,7 +85,7 @@ public class ExternalStorageExampleActivity extends AppCompatActivity {
      * 加载外部文件数据
      */
     private void loadFromFile() {
-        if(!Utils.isExternalStorageReadable()){
+        if(!TutorialUtils.isExternalStorageReadable()){
             Toast.makeText(this, "No external storage avaialble", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -95,7 +95,7 @@ public class ExternalStorageExampleActivity extends AppCompatActivity {
         try {
             reader = new BufferedReader(new FileReader(file));
             String line = reader.readLine();
-            Article art = Utils.gson().fromJson(line,Article.class);
+            Article art = TutorialUtils.gson().fromJson(line,Article.class);
             titleText.setText(art.title);
             contentText.setText(art.content);
         } catch (IOException e) {
@@ -110,7 +110,7 @@ public class ExternalStorageExampleActivity extends AppCompatActivity {
      * 保存输入数据到外部文件
      */
     private void saveToFile() {
-        if(!Utils.isExternalStorageWritable()){
+        if(!TutorialUtils.isExternalStorageWritable()){
             Toast.makeText(this, "No external storage avaialble", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -119,7 +119,7 @@ public class ExternalStorageExampleActivity extends AppCompatActivity {
         FileWriter writer = null;
         try {
             writer = new FileWriter(file);
-            writer.append(Utils.gson().toJson(art));
+            writer.append(TutorialUtils.gson().toJson(art));
         } catch (IOException e) {
             e.printStackTrace();
         }finally{
@@ -156,7 +156,7 @@ public class ExternalStorageExampleActivity extends AppCompatActivity {
                 }
                 fos.flush();
             } catch (IOException e) {
-                Log.e(Utils.class.getSimpleName(), "Error saving resources[" + urlStr + "] to file[" + file + "]", e);
+                Log.e(TutorialUtils.class.getSimpleName(), "Error saving resources[" + urlStr + "] to file[" + file + "]", e);
             } finally {
                 IOUtils.close(conn);
                 IOUtils.closeQuietly(fos);
