@@ -171,7 +171,12 @@
         <activity android:name=".fixscreen.FixScreenExamplesActivity" />
         <activity android:name=".fixscreen.FixMultiScreenExampleActivity" />
         <activity android:name=".fixscreen.StylingExampleActivity" />
-        <activity android:name=".fixscreen.OrientationChangeExampleActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity
+            android:name=".fixscreen.OrientationChangeExampleActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".fixscreen.SensorPortraitExampleActivity"
+            android:screenOrientation="sensorPortrait" />
     </application>
 
 </manifest>

@@ -9,6 +9,7 @@ import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -116,5 +117,16 @@ public final class TutorialUtils {
      */
     public static Bitmap bitmap(Context ctx, int rid) {
         return ((BitmapDrawable)ctx.getDrawable(rid)).getBitmap();
+    }
+
+    /**
+     * Fill text view with a specific text
+     * @param act
+     * @param id
+     * @param text
+     */
+    public static void fillText(Activity act,int id,String text) {
+        TextView textView = (TextView)act.findViewById(id);
+        textView.setText(text);
     }
 }

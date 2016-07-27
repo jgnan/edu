@@ -23,5 +23,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Scale Screen Example"
-        android:id="@+id/scale_screen_example"/>
+        android:id="@+id/orientation_change_example"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sensor Portrait Example"
+        android:id="@+id/sensor_portrait_example"/>
 </LinearLayout>
