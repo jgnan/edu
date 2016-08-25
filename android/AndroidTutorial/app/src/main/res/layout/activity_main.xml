@@ -124,8 +124,19 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="WebView Examples"
+            android:id="@+id/webview_examples_link"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Fix Screen Examples"
             android:id="@+id/fix_multi_screen_examples_link"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Animation Examples"
+            android:id="@+id/animation_example_link"/>
     </LinearLayout>
 </ScrollView>

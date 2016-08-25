@@ -1,0 +1,2 @@
+<%%= render 'partials/breadcrumb', breadcrumb: ['<%=class_name%>管理',{title:'<%=class_name%>列表',path: <%=plural_table_name%>_path}, {title:'新建<%=class_name%>', path: new_<%=singular_table_name%>_path}]%>
+<%%= render 'form',title: '新建<%=class_name%>', back_url:<%=plural_table_name%>_path %>

@@ -1,0 +1,2 @@
+<%= render 'partials/breadcrumb', breadcrumb: ['用户管理',{title:'用户列表',path: users_path}, {title: "#{@user.account} 详情", path: @user},{title:"修改#{@user.account}", path: edit_user_path(@user)}]%>
+<%= render 'form',title: "修改 #{@user.account}", back_url:@user %>

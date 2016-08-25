@@ -1,0 +1,31 @@
+<%= render 'partials/breadcrumb', breadcrumb: ['图片管理',{title:'图片列表',path: images_path}, {title:"#{record_name @image} 详情", path: @image}]%>
+<div class='panel panel-default'>
+  <div class='panel-heading'>
+    <i class='icon-edit icon-large'></i>
+    <%=record_name @image%>详情
+  </div>
+  <div class='panel-body'>
+    <form class="form-horizontal">
+      <fieldset>
+        <div class='form-group'>
+          <%= label_tag nil,'图片标题', class: 'col-lg-2 control-label' %>
+          <div class="col-lg-10"><p class="form-control-static"><%=@image.title%></p></div>
+        </div>
+        <div class='form-group'>
+          <%= label_tag nil,'图片预览', class: 'col-lg-2 control-label' %>
+          <div class="col-lg-10"><p class="form-control-static"><a href="<%=@image.url%>" target="_blank"><img src="<%=@image.url%>" style="width:360px"/></a></p></div>
+        </div>
+        <div class='form-group'>
+          <%= label_tag nil,'图片总大小', class: 'col-lg-2 control-label' %>
+          <div class="col-lg-10"><p class="form-control-static"><%=@image.total_size%></p></div>
+        </div>
+      </fieldset>
+      <div class='actions'>
+        <%= link_to  edit_image_path(@image), class: 'btn btn-info' do %><li class="fa fa-edit"></li> 修改图片<% end -%>
+        <%= link_to @image,method: :delete,  class: 'btn btn-danger', data:{confirm: '确认要删除此记录吗？'} do %><li class="fa fa-trash"></li> 删除图片<% end -%>
+        &nbsp;&nbsp;
+        <%= link_to '返回',images_path%>
+      </div>
+    </form>
+  </div>
+</div>

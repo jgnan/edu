@@ -1,0 +1,2 @@
+<%= render 'partials/breadcrumb', breadcrumb: ['Image管理',{title:'Image列表',path: images_path}, {title: "#{record_name @image} 详情", path: @image},{title:"修改#{record_name @image}", path: edit_image_path(@image)}]%>
+<%= render 'form',title: "修改 #{record_name @image}", back_url:@image %>

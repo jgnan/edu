@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_object_animator_example"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="org.shenit.tutorial.android.anim.ObjectAnimatorExampleActivity">
+    <ImageView
+        android:id="@+id/drawable"
+        android:src="@drawable/stateful_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/button"
+        android:text="Start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:onClick="onStartClick"
+        android:layout_below="@id/drawable"
+        android:layout_centerHorizontal="true"
+        />
+</RelativeLayout>

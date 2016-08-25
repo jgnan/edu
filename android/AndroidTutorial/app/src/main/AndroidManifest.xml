@@ -176,7 +176,17 @@
             android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
             android:name=".fixscreen.SensorPortraitExampleActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="sensorPortrait" />
+        <activity android:name=".webview.WebViewExamplesActivity" />
+        <activity android:name=".webview.SimpleWebViewExampleActivity" />
+        <activity android:name=".webview.WebViewLoadHtmlActivity" />
+        <activity android:name=".webview.InteractWithWebViewActivity" />
+        <activity android:name=".anim.AnimationExamplesActivity" />
+        <activity android:name=".anim.ValueAnimatorExampleActivity" />
+        <activity android:name=".anim.ObjectAnimatorExampleActivity" />
+        <activity android:name=".anim.LayoutAnimationExampleActivity"/>
+        <activity android:name=".anim.LayoutAnimationByXmlExampleActivity"/>
     </application>
 
 </manifest>

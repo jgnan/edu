@@ -3,6 +3,7 @@ package org.shenit.tutorial.android;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import org.shenit.tutorial.android.anim.AnimationExamplesActivity;
 import org.shenit.tutorial.android.asynccall.AsyncCallExamplesActivity;
 import org.shenit.tutorial.android.broadcast.BroadcastReceiverExamplesActivity;
 import org.shenit.tutorial.android.customization.CustomizationExamplesActivity;
@@ -19,6 +20,7 @@ import org.shenit.tutorial.android.recyclerview.RecyclerViewExamplesActivity;
 import org.shenit.tutorial.android.search.SearchExamplesActivity;
 import org.shenit.tutorial.android.serialization.SerializationExamplesActivity;
 import org.shenit.tutorial.android.services.ServiceExamplesActivity;
+import org.shenit.tutorial.android.webview.WebViewExamplesActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -47,5 +49,7 @@ public class MainActivity extends AppCompatActivity {
         TutorialUtils.bind(this, R.id.notification_examples_link, NotificationExamplesActivity.class);
         TutorialUtils.bind(this,R.id.customization_examples_link, CustomizationExamplesActivity.class);
         TutorialUtils.bind(this,R.id.fix_multi_screen_examples_link, FixScreenExamplesActivity.class);
+        TutorialUtils.bind(this,R.id.webview_examples_link, WebViewExamplesActivity.class);
+        TutorialUtils.bind(this,R.id.animation_example_link, AnimationExamplesActivity.class);
     }
 }

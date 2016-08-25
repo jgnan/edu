@@ -1,0 +1,8 @@
+<%= menu do -%>
+  <%=item '用户管理', icon: 'users', scope: 'users'  do -%>
+    <%=subitem '用户列表', '/users',scope: 'users'%>
+  <% end-%>
+  <%=item '文件管理', icon: 'file' do -%>
+    <%=subitem '图片列表', '/images'%>
+  <% end-%>
+<%end-%>

@@ -1,0 +1,40 @@
+<%%= render 'partials/breadcrumb', breadcrumb: ['<%=class_name%>管理',{title:'<%=class_name%>列表',path: <%=plural_table_name%>_path}, {title:"#{record_name @<%=singular_table_name%>} 详情", path: @<%=singular_table_name%>}]%>
+<div class='panel panel-default'>
+  <div class='panel-heading'>
+    <i class='icon-edit icon-large'></i>
+    <%%=record_name @<%=singular_table_name%>%>详情
+  </div>
+  <div class='panel-body'>
+    <form class="form-horizontal">
+      <fieldset>
+<% attributes.reject(&:password_digest?).each do |attr| -%>
+        <div class='form-group'>
+          <%%= label_tag nil,'<%=attr.human_name%>', class: 'col-lg-2 control-label' %>
+          <% if attr.name == "#{singular_table_name}_key" %>
+            <div class="col-lg-10">
+              <%%=@<%=singular_table_name%>.<%=attr.name%>%>
+              &nbsp;&nbsp;
+              <%%= link_to '更换密钥',refresh_key_<%=singular_table_name%>_path(@<%=singular_table_name%>), method: :put, data:{confirm:'您确定要更新密钥吗（此操作不可恢复)?'}, class: 'btn btn-danger'%>
+            </div>
+          <% elsif attr.name == 'status'  %>
+            <div class="col-lg-10">
+              <%%=enabled_disabled_map @<%=singular_table_name%>.<%=attr.name%>, :disabled%>
+              &nbsp;&nbsp;
+              <%%= enable_button @<%=singular_table_name%>%>
+              <%%= disable_button @<%=singular_table_name%>%>
+            </div>
+          <% else %>
+          <div class="col-lg-10"><p class="form-control-static"><%%=@<%=singular_table_name%>.<%=attr.name%>%></p></div>
+          <% end %>
+        </div>
+<% end -%>
+      </fieldset>
+      <div class='actions'>
+        <%%= link_to  edit_<%=singular_table_name%>_path(@<%=singular_table_name%>), class: 'btn btn-info' do %><li class="fa fa-edit"></li> 修改<%=class_name%><%% end -%>
+        <%%= link_to @<%=singular_table_name%>,method: :delete,  class: 'btn btn-danger', data:{confirm: '确认要删除此记录吗？'} do %><li class="fa fa-trash"></li> 删除<%=class_name%><%% end -%>
+        &nbsp;&nbsp;
+        <%%= link_to '返回',<%=plural_table_name%>_path%>
+      </div>
+    </form>
+  </div>
+</div>

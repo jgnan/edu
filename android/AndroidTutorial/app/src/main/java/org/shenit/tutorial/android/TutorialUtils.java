@@ -8,7 +8,9 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -128,5 +130,31 @@ public final class TutorialUtils {
     public static void fillText(Activity act,int id,String text) {
         TextView textView = (TextView)act.findViewById(id);
         textView.setText(text);
+    }
+
+    public static void toggleVisible(int disappearFlag, View... views) {
+        for(View v : views){
+            if(v != null) v.setVisibility(isVisible(v) ? disappearFlag: View.VISIBLE );
+        }
+    }
+
+    /**
+     * Toggle Invisible value from views
+     * @param views
+     */
+    public static void toggleInvisible(View... views) {
+        toggleVisible(View.INVISIBLE, views);
+    }
+
+    /**
+     * Toggle Gone value from views
+     * @param views
+     */
+    public static void toggleGone(View... views) {
+        toggleVisible(View.GONE, views);
+    }
+
+    public static boolean isVisible(View v){
+        return v != null && v.getVisibility() == View.VISIBLE;
     }
 }

@@ -1,0 +1,15 @@
+zh:
+  will_paginate:
+    previous_label: "«"
+    next_label: "»"
+    page_entries_info:
+      single_page:
+        zero: "暂无记录"
+        one: "显示第1条记录"
+        other: "显示共%{count}条记录"
+      single_page_html:
+        zero: "暂无记录"
+        one: "显示1条记录"
+        other: "显示<b>共&nbsp;%{count}条</b>记录"
+      multi_page: "显示第 %{from } 至 %{to} 条记录，共 %{count} 条记录"
+      multi_page_html: "显示<b> 第 %{from}&nbsp;-&nbsp;%{to} 条</b> 记录,共<b> %{count}条 </b> 记录"

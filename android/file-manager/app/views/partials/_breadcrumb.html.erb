@@ -1,0 +1,12 @@
+<br/>
+<ul class='breadcrumb' id='breadcrumb'>
+  <% unless breadcrumb.empty? %>
+  <li class='title'><%=breadcrumb.first%></li>
+    <% unless breadcrumb.size < 2 -%>
+      <% for i in 1...breadcrumb.size-1 do -%>
+    <li><%= link_to breadcrumb[i][:title],breadcrumb[i][:path]%></a></li>
+      <% end -%>
+      <li class="active"><%= link_to breadcrumb.last[:title], breadcrumb.last[:path]%></li>
+    <% end -%>
+  <% end -%>
+</ul>

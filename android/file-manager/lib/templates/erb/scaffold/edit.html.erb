@@ -1,0 +1,2 @@
+<%%= render 'partials/breadcrumb', breadcrumb: ['<%=class_name%>管理',{title:'<%=class_name%>列表',path: <%=plural_table_name%>_path}, {title: "#{record_name @<%=singular_table_name%>} 详情", path: @<%=singular_table_name%>},{title:"修改#{record_name @<%=singular_table_name%>}", path: edit_<%=singular_table_name%>_path(@<%=singular_table_name%>)}]%>
+<%%= render 'form',title: "修改 #{record_name @<%=singular_table_name%>}", back_url:@<%=singular_table_name%> %>

@@ -1,0 +1,62 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+zh:
+  devise:
+    confirmations:
+      confirmed: "Your email address has been successfully confirmed."
+      send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
+      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
+    failure:
+      already_authenticated: "您已经登录系统了."
+      inactive: "您的帐号尚未激活，请先激活"
+      invalid: "帐号不存在或密码错误!"
+      locked: "您的帐号已被锁定，请找管理员解锁"
+      last_attempt: "You have one more attempt before your account is locked."
+      not_found_in_database: "帐号 %{authentication_keys} 不存在或密码错误."
+      timeout: "您的帐号已超时，请重新登录."
+      unauthenticated: "您需要先登录或注册成会员才能使用此功能"
+      unconfirmed: "请先按照确认邮件进行确认后再继续"
+    mailer:
+      confirmation_instructions:
+        subject: "Confirmation instructions"
+      reset_password_instructions:
+        subject: "Reset password instructions"
+      unlock_instructions:
+        subject: "Unlock instructions"
+      password_change:
+        subject: "Password Changed"
+    omniauth_callbacks:
+      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
+      success: "Successfully authenticated from %{kind} account."
+    passwords:
+      no_token: "您的访问方式不正确。请确认使用邮件提供的地址访问此页。"
+      send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
+      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
+      updated: "您的密码已经修改成功。正在为您登录系统。"
+      updated_not_active: "您的密码修改成功"
+    registrations:
+      destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
+      signed_up: "您好，欢迎您注册成为我们的会员！"
+      signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
+      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
+      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
+      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address."
+      updated: "您的帐号信息已更新"
+    sessions:
+      signed_in: " 登录成功"
+      signed_out: "注销成功"
+      already_signed_out: "注销成功"
+    unlocks:
+      send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
+      send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
+      unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+  errors:
+    messages:
+      already_confirmed: "已确认，请尝试登录"
+      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
+      expired: "已过期,请重新申请"
+      not_found: "不存在"
+      not_locked: "已锁定"
+      not_saved:
+        one: "1 error prohibited this %{resource} from being saved:"
+        other: "%{count} errors prohibited this %{resource} from being saved:"
