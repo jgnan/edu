@@ -30,7 +30,7 @@ public class LayoutAnimationExampleActivity extends AppCompatActivity {
 
         appearAnim = ObjectAnimator.ofFloat(vg,"alpha",0.0f, 1.0f);
         appearAnim.setDuration(1000l);
-        disappearAnim = ObjectAnimator.ofFloat(vg,"alpha",0.0f, 1.0f);
+        disappearAnim = ObjectAnimator.ofFloat(vg,"alpha",1.0f, 0.0f);
         disappearAnim.setDuration(1000l);
 
     }

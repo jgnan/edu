@@ -15,6 +15,8 @@ public class AnimationExamplesActivity extends AppCompatActivity {
 
         TutorialUtils.bind(this,R.id.val_anim_example_button,ValueAnimatorExampleActivity.class);
         TutorialUtils.bind(this,R.id.obj_anim_example_button,ObjectAnimatorExampleActivity.class);
+        TutorialUtils.bind(this,R.id.val_anim_example2_button,PropertyAnimatorExampleActivity.class);
+        TutorialUtils.bind(this,R.id.view_anim_example_button,ViewAnimExamplesActivity.class);
         TutorialUtils.bind(this,R.id.layout_anim_example_button,LayoutAnimationExampleActivity.class);
         TutorialUtils.bind(this,R.id.layout_anim_xml_example_button,LayoutAnimationByXmlExampleActivity.class);
     }

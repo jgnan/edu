@@ -24,6 +24,18 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Value Animator Example2"
+        android:id="@+id/val_anim_example2_button"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Animation Example"
+        android:id="@+id/view_anim_example_button"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="Layout Animator Example"
         android:id="@+id/layout_anim_example_button"
         />

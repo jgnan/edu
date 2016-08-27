@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android" android:duration="1000" android:fillAfter="true">
+    <set>
+        <alpha android:fromAlpha="1" android:toAlpha=".5"/>
+        <rotate android:pivotY="50%" android:pivotX="50%" android:fromDegrees="0" android:toDegrees="360"/>
+        <scale android:fromXScale="100%" android:fromYScale="100%" android:toYScale="50%" android:toXScale="50%"
+            android:pivotX="50%" android:pivotY="50%"/>
+    </set>
+    <set android:startOffset="5000">
+        <alpha android:fromAlpha="1" android:toAlpha=".5"/>
+        <rotate android:pivotY="50%" android:pivotX="50%" android:fromDegrees="0" android:toDegrees="360"/>
+        <scale android:fromXScale="100%" android:fromYScale="100%" android:toYScale="50%" android:toXScale="50%"
+            android:pivotX="50%" android:pivotY="50%"/>
+    </set>
+</set>

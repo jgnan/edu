@@ -185,8 +185,13 @@
         <activity android:name=".anim.AnimationExamplesActivity" />
         <activity android:name=".anim.ValueAnimatorExampleActivity" />
         <activity android:name=".anim.ObjectAnimatorExampleActivity" />
-        <activity android:name=".anim.LayoutAnimationExampleActivity"/>
-        <activity android:name=".anim.LayoutAnimationByXmlExampleActivity"/>
+        <activity android:name=".anim.LayoutAnimationExampleActivity" />
+        <activity android:name=".anim.LayoutAnimationByXmlExampleActivity" />
+        <activity android:name=".anim.ViewAnimExamplesActivity" />
+        <activity android:name=".anim.PropertyAnimatorExampleActivity" />
+        <activity android:name=".drawing.DrawingExamplesActivity" />
+        <activity android:name=".drawing.CanvasExampleActivity" />
+        <activity android:name=".drawing.SurfaceViewExampleActivity"></activity>
     </application>
 
 </manifest>

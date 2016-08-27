@@ -10,6 +10,7 @@ import org.shenit.tutorial.android.customization.CustomizationExamplesActivity;
 import org.shenit.tutorial.android.dataproc.DataProcessExamplesActivity;
 import org.shenit.tutorial.android.dataprovider.DataProviderExamplesActivity;
 import org.shenit.tutorial.android.drawable.DrawableMainActivity;
+import org.shenit.tutorial.android.drawing.DrawingExamplesActivity;
 import org.shenit.tutorial.android.fixscreen.FixScreenExamplesActivity;
 import org.shenit.tutorial.android.fragment.FragmentExamplesActivity;
 import org.shenit.tutorial.android.list.ListExamplesActivity;
@@ -51,5 +52,6 @@ public class MainActivity extends AppCompatActivity {
         TutorialUtils.bind(this,R.id.fix_multi_screen_examples_link, FixScreenExamplesActivity.class);
         TutorialUtils.bind(this,R.id.webview_examples_link, WebViewExamplesActivity.class);
         TutorialUtils.bind(this,R.id.animation_example_link, AnimationExamplesActivity.class);
+        TutorialUtils.bind(this,R.id.drawing_example_link, DrawingExamplesActivity.class);
     }
 }

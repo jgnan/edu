@@ -14,4 +14,23 @@
     <string name="title_activity_article_search">ArticleSearchActivity</string>
 
     <string name="polymorphic_title">Default Polymorphic Title</string>
+    <string-array name="anim_effects">
+        <item>alpha</item>
+        <item>scale</item>
+        <item>translate</item>
+        <item>rotate</item>
+        <item>set</item>
+    </string-array>
+    <string-array name="interpolators">
+        <item>none</item>
+        <item>accelerate</item>
+        <item>decelerate</item>
+        <item>accelerateDecelerate</item>
+        <item>anticipate</item>
+        <item>overshoot</item>
+        <item>anticipateOvershoot</item>
+        <item>bounce</item>
+        <item>cycle</item>
+        <item>cutomize</item>
+    </string-array>
 </resources>
