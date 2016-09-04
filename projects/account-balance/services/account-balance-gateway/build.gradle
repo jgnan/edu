@@ -1,0 +1,50 @@
+buildscript{
+	repositories {
+	    jcenter()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
+	}	
+}
+
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+
+repositories {
+    jcenter()
+}
+
+// In this section you declare the dependencies for your production and test code
+dependencies {
+	/** SPRING BOOT SUPPORT BEGIN */
+	//web support
+	compile("org.springframework.boot:spring-boot-starter-web:1.4.0.RELEASE"){
+		exclude group:'org.springframework.boot', module:'spring-boot-starter-tomcat'
+	}
+	//using undertow
+	compile "org.springframework.boot:spring-boot-starter-undertow:1.4.0.RELEASE"
+	
+	//redis support
+	//compile "org.springframework.boot:spring-boot-starter-redis:1.4.0.RELEASE"
+	
+	//mongo db support
+	//compile "org.springframework.boot:spring-boot-starter-data-mongodb:1.4.0.RELEASE"
+	
+	/** SPRING BOOT SUPPORT END */
+	
+	/** MYSQL SUPPORT BEGIN */
+	compile "mysql:mysql-connector-java:5.1.39" //mysql connector
+	compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:1.1.1")
+	/** MYSQL SUPPORT END */
+	
+	/** EHCACHE BGEIN */
+	//compile 'net.sf.ehcache:ehcache:2.10.2.2.21'
+	/** EHCACHE END */
+	
+	/** COMMON LIBS BEGIN */
+	compile 'org.slf4j:slf4j-api:1.7.21'
+	/** COMMON LIBS END */
+	
+	testCompile 'junit:junit:4.12'
+    testCompile "org.springframework.boot:spring-boot-starter-test:1.4.0.RELEASE"
+}

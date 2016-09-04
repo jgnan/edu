@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task"
+    xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd
+    http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.0.xsd
+    http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+    
+	<!--
+		Task executor configuration. Remove comments in this section to enable a task executor which could
+		help us to execute async task in some certain circumstance to improve performance 
+	 -->
+	<!-- 
+	<task:annotation-driven executor="myExecutor" scheduler="myScheduler"/>
+	<task:executor id="myExecutor" pool-size="16"/>
+	<task:scheduler id="myScheduler" pool-size="4"/>
+	-->
+
+	<!-- 
+		Mongodb single instance mode config. If you use a single mongo db instance, you could remove this 
+		section to enable this feature.
+	-->
+    <!-- 
+	<mongo:db-factory id="mongoFactoryExample" dbname="${app.mongo.example.dbName}" 
+		host="${app.mongo.example.host}" port="${app.mongo.example.port}" write-concern="SAFE"/>
+	<mongo:mapping-converter id="converter" db-factory-ref="mongoFactoryExample"/>
+
+	<mongo:repositories mongo-template-ref="mongoTemplateExample"
+		base-package="study.springboot.starter.repos.mongo.example" />
+
+	<bean id="mongoTemplateExample" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg name="mongoDbFactory" ref="mongoFactoryExample" />
+	</bean>
+    <mongo:repositories mongo-template-ref="mongoTemplateExample" base-package="${app.mongo.example.basePackage}" />
+    -->
+	<!-- 
+		Mongodb replication-set mode config. If you use a replica-set, you could remove this 
+		section to enable this feature.
+	-->
+	<!-- 
+	<mongo:mongo id="mongoRepliSetExample" replica-set="${app.mongo.example.replicaSet}" >
+	    <mongo:options auto-connect-retry="true" max-wait-time="${app.mongo.example.waitTimeout}" 
+	        connections-per-host="${app.mongo.example.connPerHost}" 
+	        connect-timeout="${app.mongo.example.connTimeout}" 
+	        slave-ok="${app.mongo.example.slaveOk}" 
+	        write-timeout="${app.mongo.example.writeTimeout}" 
+	        socket-keep-alive="${app.mongo.example.keepAlive}" 
+	        socket-timeout="${app.mongo.example.connTimeout}"/>
+	</mongo:mongo>
+	<bean id="mongoCredentialsExample" class="org.springframework.data.authentication.UserCredentials">
+		<constructor-arg name="username" value="${app.mongo.example.user}" />
+		<constructor-arg name="password" value="${app.mongo.example.passwd}" />
+	</bean>
+	<bean id="mongoTemplateExample" class="org.springframework.data.mongodb.core.MongoTemplate">		
+		<constructor-arg ref="mongoRepliSetExample" />
+		<constructor-arg name="databaseName" value="${app.mongo.example.dbName}" />
+		<constructor-arg name="userCredentials" ref="mongoCredentialsExample" />
+	</bean>
+  <mongo:repositories mongo-template-ref="mongoTemplateExample" base-package="${app.mongo.example.basePackage}" />
+	-->
+	
+	
+	<!-- Jedis Configuration. Remove this config to enable redis. -->
+	<!-- 
+	<bean id="jedisConnFactoryExample"
+		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+		p:host-name="${app.redis.example.host}" p:port="${app.redis.example.port}" p:password="${app.redis.example.passwd}"
+		p:use-pool="true" />
+	<bean id="redisTemplateExample" class="org.springframework.data.redis.core.RedisTemplate"
+		p:connection-factory-ref="jedisConnFactoryExample" />
+	<bean id="cacheManager" class="org.springframework.data.redis.cache.RedisCacheManager" c:template-ref="redisTemplateExample"/>
+	-->
+</beans>

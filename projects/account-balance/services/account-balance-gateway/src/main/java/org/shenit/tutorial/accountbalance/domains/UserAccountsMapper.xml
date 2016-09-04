@@ -1,0 +1,14 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.shenit.tutorial.accountbalance.domains.UserAccountsMapper">
+	<resultMap type="UserAccount" id="userAccountMapper">
+		<id column="id" property="id" />
+		<result column="user_id" property="userId" javaType="long" />
+	</resultMap>
+
+	<select id="findAll" resultMap="userAccountMapper">
+		select * from user_accounts
+	</select>
+</mapper>

@@ -1,0 +1,53 @@
+# This section use by spring mvc
+package: org.shenit.tutorial.accountbalance
+spring:
+  application:
+    name: account_balance
+  http:
+    # Chararcter Encoding filter settings
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/${spring.application.name}_${spring.profiles}?zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=utf-8
+    poolSize: 5
+    tomcat:
+      maxWait: 10000
+      maxActive: 30
+      testOnBorrow: true
+
+mybatis:
+  typeAliasesPackage: ${package}.domains
+
+# All server's configuration here
+server:
+  # This server instance's port
+  port: 8080
+
+# Application settings for your own project
+---
+#Development environment settings
+spring:
+  profiles: devel
+  datasource:
+    username: root
+    password:
+
+logging:
+  level: 
+    ${package}: DEBUG
+
+---
+#Test environment settings
+spring:
+  profiles: test
+  datasource:
+    username: account_balance
+    password:
+
+logging:
+  level: 
+    ${package}: INFO
+    
