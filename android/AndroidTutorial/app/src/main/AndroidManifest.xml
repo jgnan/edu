@@ -191,7 +191,9 @@
         <activity android:name=".anim.PropertyAnimatorExampleActivity" />
         <activity android:name=".drawing.DrawingExamplesActivity" />
         <activity android:name=".drawing.CanvasExampleActivity" />
-        <activity android:name=".drawing.SurfaceViewExampleActivity"></activity>
+        <activity android:name=".drawing.SurfaceViewExampleActivity" />
+        <activity android:name=".media.MediaExamplesActivity" />
+        <activity android:name=".media.LocalMediaExampleActivity"></activity>
     </application>
 
 </manifest>

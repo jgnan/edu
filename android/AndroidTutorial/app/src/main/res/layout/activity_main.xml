@@ -137,10 +137,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Animation Examples"
-            android:id="@+id/animation_example_link"/>
+            android:id="@+id/animation_examples_link"/>
         <Button
             android:text="Drawing Examples"
-            android:id="@+id/drawing_example_link"
+            android:id="@+id/drawing_examples_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="Media Examples"
+            android:id="@+id/media_examples_link"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>

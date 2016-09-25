@@ -14,6 +14,7 @@ import org.shenit.tutorial.android.drawing.DrawingExamplesActivity;
 import org.shenit.tutorial.android.fixscreen.FixScreenExamplesActivity;
 import org.shenit.tutorial.android.fragment.FragmentExamplesActivity;
 import org.shenit.tutorial.android.list.ListExamplesActivity;
+import org.shenit.tutorial.android.media.MediaExamplesActivity;
 import org.shenit.tutorial.android.menu.MenuExamplesActivity;
 import org.shenit.tutorial.android.notification.NotificationExamplesActivity;
 import org.shenit.tutorial.android.pager.PagerExamplesActivity;
@@ -51,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
         TutorialUtils.bind(this,R.id.customization_examples_link, CustomizationExamplesActivity.class);
         TutorialUtils.bind(this,R.id.fix_multi_screen_examples_link, FixScreenExamplesActivity.class);
         TutorialUtils.bind(this,R.id.webview_examples_link, WebViewExamplesActivity.class);
-        TutorialUtils.bind(this,R.id.animation_example_link, AnimationExamplesActivity.class);
-        TutorialUtils.bind(this,R.id.drawing_example_link, DrawingExamplesActivity.class);
+        TutorialUtils.bind(this,R.id.animation_examples_link, AnimationExamplesActivity.class);
+        TutorialUtils.bind(this,R.id.drawing_examples_link, DrawingExamplesActivity.class);
+        TutorialUtils.bind(this,R.id.media_examples_link, MediaExamplesActivity.class);
     }
 }
