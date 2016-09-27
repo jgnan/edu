@@ -193,7 +193,8 @@
         <activity android:name=".drawing.CanvasExampleActivity" />
         <activity android:name=".drawing.SurfaceViewExampleActivity" />
         <activity android:name=".media.MediaExamplesActivity" />
-        <activity android:name=".media.LocalMediaExampleActivity"></activity>
+        <activity android:name=".media.LocalMediaExampleActivity" />
+        <activity android:name=".fragment.IncludeExampleActivity"></activity>
     </application>
 
 </manifest>
